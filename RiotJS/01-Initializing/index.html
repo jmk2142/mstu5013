@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+	<h1>Initializing Riot</h1>
+	<p>This demonstration shows how to setup your base page with RiotJS. In this example (see code) I created two custom RiotJS components found in the <em>tags</em> folder. Riot <em>tags</em> look like HTML/CSS/JS combined. While it takes on the standard <em>format</em> of HTML/CSS/JS, it is not recognized as any. It is its own unique thing. What RiotJS does, is allow us to write these kinds of <em>tag</em> files, then <em>compile</em> them into pure JS for the browser to understand.</p>
+
+	<div class="example">
+		<h2>Custom Component A:</h2>
+		<basic></basic>
+	</div>
+
+	<div class="example">
+		<h2>Custom Component B:</h2>
+		<photo-jin></photo-jin>
+		<photo-jin></photo-jin>
+		<photo-jin></photo-jin>
+	</div>
+
+	<div class="example">
+		<h2>Custom Component C:</h2>
+		<gallery-jin></gallery-jin>	
+	</div>
+
+
+	<p>You can find the CDN links to the RiotJS library <a href="http://riotjs.com/download/">here</a>. <strong>NOTE:</strong> Make sure you load the <em>riot+compiler.js</em> version.</p>
+
+
+	<!-- Make sure all your tag files are listed like this. -->
+	<script src="./tags/basic.tag" type="riot/tag"></script>
+	<script src="./tags/photo-jin.tag" type="riot/tag"></script>
+	<script src="./tags/gallery-jin.tag" type="riot/tag"></script>
+
+	<!-- Load RiotJS and the COMPILER, which will transform your tags into JS -->
+	<script src="https://cdn.jsdelivr.net/riot/3.0/riot+compiler.min.js"></script>
+
+	<!-- Your own custom JS, I am INITIALIZING the tags in this code -->
+	<script src="js/main.js"></script>
+</body>
+</html>

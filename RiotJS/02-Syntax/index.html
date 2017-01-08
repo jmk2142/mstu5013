@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+	<h1>Riot Syntax</h1>
+	<p>This demonstration shows some of the syntax of Riot in play.</p>
+
+	<div class="example">
+		<h2>Custom Component A:</h2>
+		<interpolation></interpolation>
+	</div>
+
+	<div class="example">
+		<h2>Custom Component B:</h2>
+		<expressions></expressions>
+	</div>
+
+	<div class="example">
+		<h2>Custom Component C:</h2>
+	</div>
+
+
+	<!-- Make sure all your tag files are listed like this. -->
+	<script src="./tags/interpolation.tag" type="riot/tag"></script>
+	<script src="./tags/expressions.tag" type="riot/tag"></script>
+
+	<!-- Load RiotJS and the COMPILER, which will transform your tags into JS -->
+	<script src="https://cdn.jsdelivr.net/riot/3.0/riot+compiler.min.js"></script>
+
+	<!-- Your own custom JS, I am INITIALIZING the tags in this code -->
+	<script src="js/main.js"></script>
+</body>
+</html>
