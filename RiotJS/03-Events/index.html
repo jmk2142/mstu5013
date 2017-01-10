@@ -6,23 +6,22 @@
 	<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-	<h1>Riot Syntax</h1>
-	<p>This demonstration shows some of the syntax of Riot in play.</p>
+	<h1>Riot Events</h1>
+	<p>This demonstration shows some of the HTML events can be used with Riot.</p>
 
 	<div class="example">
 		<h2>Custom Component A:</h2>
-		<interpolation></interpolation>
+		<basic></basic>
 	</div>
 
 	<div class="example">
 		<h2>Custom Component B:</h2>
-		<expressions></expressions>
+		<form-inputs></form-inputs>
 	</div>
 
-
 	<!-- Make sure all your tag files are listed like this. -->
-	<script src="./tags/interpolation.tag" type="riot/tag"></script>
-	<script src="./tags/expressions.tag" type="riot/tag"></script>
+	<script src="./tags/basic.tag" type="riot/tag"></script>
+	<script src="./tags/form-inputs.tag" type="riot/tag"></script>
 
 	<!-- Load RiotJS and the COMPILER, which will transform your tags into JS -->
 	<script src="https://cdn.jsdelivr.net/riot/3.0/riot+compiler.min.js"></script>

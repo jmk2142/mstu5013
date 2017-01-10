@@ -8,7 +8,7 @@
 		The words { wordOne }, { wordTwo }, and { wordThree } come from THIS tags javascript.<br>They are interpolated directly into the tag template.
 	</p>
 	<p>
-		Look at the code. The curly braces <code>{ "{ }" }</code>	in Riot tag templates mean we're working with Javascript.<br>Things inside { "{ curly braces }" } are treated like JS. Because they are special, if you want to actually write curly braces into your content as characters, you need to escape them {"{ }"}.
+		Look at the code. The curly braces <code>\{ \}</code>	in Riot tag templates mean we're working with Javascript.<br>Things inside \{ curly braces \} are treated like JS. Because they are special, if you want to actually write curly braces into your content as characters, you need to escape them with slashes <code>\\{ this is not evaluated \\}</code>.
 	</p>
 
 	<h3>Other demonstrations of interpolation:</h3>
