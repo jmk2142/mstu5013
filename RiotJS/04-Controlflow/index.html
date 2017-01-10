@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+	<h1>Riot Controlflow</h1>
+	<p>This demonstration of how to control UI displays within Riot.</p>
+
+	<div class="example">
+		<h2>Custom Component A:</h2>
+		<conditional-example></conditional-example>
+	</div>
+
+	<div class="example">
+		<h2>Custom Component B:</h2>
+		<loops-example></loops-example>
+	</div>
+
+	<div class="example">
+		<h2>Custom Component C:</h2>
+		<parent-child-example></parent-child-example>
+	</div>
+
+	<!-- Make sure all your tag files are listed like this. -->
+	<script src="./tags/conditional-example.tag" type="riot/tag"></script>
+	<script src="./tags/loops-example.tag" type="riot/tag"></script>
+	<script src="./tags/parent-child-example.tag" type="riot/tag"></script>
+
+	<!-- Load RiotJS and the COMPILER, which will transform your tags into JS -->
+	<script src="https://cdn.jsdelivr.net/riot/3.0/riot+compiler.min.js"></script>
+
+	<!-- I INITIALIZED the tags in this code directly (here) -->
+	<script>
+		riot.mount('*');
+	</script>
+</body>
+</html>
