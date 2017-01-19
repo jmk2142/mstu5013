@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+	<h1>Riot Tags (Advanced)</h1>
+	<p>This is a demonstration of Riot Tag object details.</p>
+
+	<div class="example">
+		<h2>Custom Component A:</h2>
+		<p>This demonstration is to help you see the <em>internal</em> object structure of a Riot Tag and understand how both data from the inside of a tag, as well as data passed in from the outside of a tag, are managed and organized.</p>
+		<tag-internal></tag-internal>
+	</div>
+
+	<div class="example">
+		<h2>Custom Component B:</h2>
+		<data-from-outside></data-from-outside>
+	</div>
+
+	<!-- Make sure all your tag files are listed like this. -->
+	<script src="./tags/tag-internal.tag" type="riot/tag"></script>
+	<script src="./tags/data-from-outside.tag" type="riot/tag"></script>
+	<script src="./tags/data-in.tag" type="riot/tag"></script>
+
+	<!-- Load RiotJS and the COMPILER, which will transform your tags into JS -->
+	<script src="https://cdn.jsdelivr.net/riot/3.0/riot+compiler.min.js"></script>
+
+	<script>
+		// This function isn't important - used to avoid circular reference errors.
+		// Adapted from http://stackoverflow.com/a/9653082/972393
+		function censor(censor) {
+			var i = 0;
+			return function(key, value) {
+				if (typeof value === 'function')
+					return '[Function]';
+				if (key === '_tag' || key === '_parent')
+					return '[Tag]'
+				if(i !== 0 && typeof(censor) === 'object' && typeof(value) == 'object' && censor == value)
+					return '[Circular]';
+				if(i >= 29) // seems to be a harded maximum of 30 serialized objects?
+					return '[Unknown]';
+				++i; // so we know we aren't using the original object anymore
+				return value;
+			}
+		}
+
+		riot.mount('*');
+	</script>
+</body>
+</html>
