@@ -51,11 +51,13 @@
 			padding: 15px;
 		}
 		.gallery {
+			display: flex;
 			vertical-align: middle;
+			justify-content: space-between;
 		}
 		img {
 			max-height: 100px;
-			width: 20%;
+			/*width: 20%;*/
 		}
 	</style>
 </loops-example>

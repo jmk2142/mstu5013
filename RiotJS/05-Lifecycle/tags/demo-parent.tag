@@ -81,7 +81,7 @@
 	</script>
 
 	<style>
-		:scope {
+		:scope:not(:empty) {
 			display: block;
 			background: #607d8b;
 			padding: 15px;

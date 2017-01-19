@@ -11,24 +11,34 @@
 
 	<div class="example">
 		<h2>Custom Component A:</h2>
+		<button id="startDemo">Start Demonstration</button>
+
 		<demo-parent></demo-parent>
 	</div>
 
 	<div class="example">
 		<h2>Custom Component B:</h2>
 		<p>Comparing Synchronous vs. Asynchronous Updates.</p>
+		<sync-async></sync-async>
 	</div>
 
 	<!-- Make sure all your tag files are listed like this. -->
 	<script src="./tags/demo-parent.tag" type="riot/tag"></script>
 	<script src="./tags/demo-child.tag" type="riot/tag"></script>
+	<script src="./tags/sync-async.tag" type="riot/tag"></script>
 
 	<!-- Load RiotJS and the COMPILER, which will transform your tags into JS -->
 	<script src="https://cdn.jsdelivr.net/riot/3.0/riot+compiler.min.js"></script>
 
 	<!-- I INITIALIZED the tags in this code directly (here) -->
 	<script>
-		riot.mount('*');
+		document.getElementById('startDemo').addEventListener('click', function(event) {
+			event.currentTarget.remove();
+			riot.mount('demo-parent');
+		});
+
+		riot.mount('sync-async');
+
 	</script>
 </body>
 </html>
