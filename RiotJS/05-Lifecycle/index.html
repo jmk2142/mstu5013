@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+	<h1>Riot Lifecycle</h1>
+	<p>This demonstration of how the Riot tag lifecycle occurs.</p>
+
+	<div class="example">
+		<h2>Custom Component A:</h2>
+		<demo-parent></demo-parent>
+	</div>
+
+	<div class="example">
+		<h2>Custom Component B:</h2>
+		<p>Comparing Synchronous vs. Asynchronous Updates.</p>
+	</div>
+
+	<!-- Make sure all your tag files are listed like this. -->
+	<script src="./tags/demo-parent.tag" type="riot/tag"></script>
+	<script src="./tags/demo-child.tag" type="riot/tag"></script>
+
+	<!-- Load RiotJS and the COMPILER, which will transform your tags into JS -->
+	<script src="https://cdn.jsdelivr.net/riot/3.0/riot+compiler.min.js"></script>
+
+	<!-- I INITIALIZED the tags in this code directly (here) -->
+	<script>
+		riot.mount('*');
+	</script>
+</body>
+</html>
