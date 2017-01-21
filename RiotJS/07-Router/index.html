@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Routing in Riot</title>
+	<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+	<h1>Riot Router (Advanced)</h1>
+	<p>This is a demonstration of Riot routers (and routers in general).</p>
+
+	<div class="example">
+		<h2>Custom Component A:</h2>
+		<p>This demonstration is to help you understand what routing is, why it's useful in JS single-page applications, and how to set one up.</p>
+		<setup></setup>
+	</div>
+
+	<!-- <div class="example">
+		<h2>Custom Component B:</h2>
+	</div> -->
+
+	<!-- Make sure all your tag files are listed like this. -->
+	<script src="./tags/setup.tag" type="riot/tag"></script>
+	<script src="./tags/menu-baking.tag" type="riot/tag"></script>
+	<script src="./tags/content-cakes.tag" type="riot/tag"></script>
+	<script src="./tags/content-cookies.tag" type="riot/tag"></script>
+	<script src="./tags/content-breads.tag" type="riot/tag"></script>
+
+
+	<!-- Load RiotJS and the COMPILER, which will transform your tags into JS -->
+	<script src="https://cdn.jsdelivr.net/riot/3.0/riot+compiler.min.js"></script>
+	<!-- Load Riot ROUTER scripts - Note that with Riot 3.0 the Router has become a standalone script that you must include separately like this. -->
+	<script src="https://cdn.jsdelivr.net/riot-route/3.0/route.min.js"></script>
+
+	<script>
+
+		riot.mount('*');
+
+	</script>
+</body>
+</html>
