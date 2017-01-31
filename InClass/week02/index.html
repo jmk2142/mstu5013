@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Limerick</title>
+</head>
+<body>
+
+	<limerick></limerick>
+
+	<!-- Make sure all your tag files are listed like this. -->
+	<script src="./tags/limerick.tag" type="riot/tag"></script>
+
+	<!-- Load RiotJS and the COMPILER, which will transform your tags into JS -->
+	<script src="https://cdn.jsdelivr.net/riot/3.0/riot+compiler.min.js"></script>
+
+	<!-- Your own custom JS, I am INITIALIZING the tags in this code -->
+	<script>
+		riot.mount('*');
+	</script>
+</body>
+</html>
