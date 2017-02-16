@@ -1,0 +1,10 @@
+html, body {
+	font-family: Helvetica;
+}
+
+app, navbar, profile {
+	border: 1px solid #DDD;
+	border-radius: 4px;
+	padding: 10px;
+	margin-top: 15px;
+}
