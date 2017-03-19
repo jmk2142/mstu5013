@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Read Write</title>
+</head>
+<body>
+
+	<!-- BOOTSTRAP Things -->
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+
+				<!-- RIOT STUFF STARTS HERE -->
+				<todo-app></todo-app>
+
+			</div>
+		</div>
+	</div>
+
+
+	<script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyCqmOOB2wbcKBxMbo-Vhsdmg1Lcl51CYLA",
+	    authDomain: "todo-firebase-37f73.firebaseapp.com",
+	    databaseURL: "https://todo-firebase-37f73.firebaseio.com",
+	    storageBucket: "todo-firebase-37f73.appspot.com",
+	    messagingSenderId: "308321612464"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+
+	<script src="tags/todo-app.tag" type="riot/tag"></script>
+	<script src="tags/todo-item.tag" type="riot/tag"></script>
+
+	<script src="https://cdn.jsdelivr.net/riot/3.1/riot+compiler.js"></script>
+
+	<script>
+		riot.mount('*');
+	</script>
+
+</body>
+</html>
