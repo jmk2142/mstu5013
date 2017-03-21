@@ -36,8 +36,10 @@
 
 			4) Articulate the concept of how the program should remove the items from the database. Try to make the trash button actually work.
 
+			5) What if we wanted this program to consider the user and their specific todos?
+
 			OPTIONAL
-			4) Underscore or LoDash Library
+			6) Underscore or LoDash Library
 		---------------------------------------- */
 
 		// To be poplated by data from Firebase
@@ -135,14 +137,15 @@
         return !item.done;
       });
 
-			console.log('todosData', this.todosData);
+			console.log('this.todosData', this.todosData);
 
 			// HINT for removing on firebase
 			// REFERENCE.remove();
 			// REFERENCE.set(null);
 		}
 
-		onlyDone(item) {	// Iterator function for the Array.filter(iterator) method...
+		// Iterator function for the Array.filter(iterator) method...
+		onlyDone(item) {
 			return item.done === true;
 		}
 	</script>
