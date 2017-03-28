@@ -1,0 +1,24 @@
+{
+  "todoItems" : {
+    "-KgIV-U4L_4EVIE2mFnJ" : {
+      "done" : false,
+      "task" : "Goto Burger King"
+    },
+    "-KgIV0bX1jozyq6mZxvi" : {
+      "done" : false,
+      "task" : "Order Whopper"
+    },
+    "-KgIV1sRqxy2-mG7BGYj" : {
+      "done" : false,
+      "task" : "Eat Whopper"
+    },
+    "-KgIV2gYV5an3cpvwWPq" : {
+      "done" : false,
+      "task" : "Regret"
+    },
+    "-KgIV33Lzrt8jmknXJdD" : {
+      "done" : false,
+      "task" : "Repeat"
+    }
+  }
+}
