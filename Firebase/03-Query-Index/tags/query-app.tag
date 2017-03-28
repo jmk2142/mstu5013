@@ -16,6 +16,7 @@
 
 	<br>
 	<h2>Part II</h2>
+	<p>Note that currently, this section isn't fully working... we're going to fix it.</p>
 
 	<form class="form-inline">
 		<div class="form-group">
