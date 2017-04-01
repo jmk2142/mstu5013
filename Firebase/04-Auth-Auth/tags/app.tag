@@ -27,9 +27,11 @@
 				var providerData = userObj.providerData;
 
 				that.user = userObj;
+				user = that.user; // set global user
 			} else {
 				// User is not signed in.
 				that.user = null;
+				user = null; // release global user
 			}
 			that.update();
 		});

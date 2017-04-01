@@ -1,5 +1,5 @@
 <members>
-	<h2>MEMBERS ONLY [Must be logged in.]</h2>
+	<h2><img src={ userPhotoURL }> Hi { user.displayName } - MEMBERS ONLY</h2>
 	<p>This page is showing because user is defined through the auth callback.</p>
 	<!-- 16:9 aspect ratio -->
 	<div class="embed-responsive embed-responsive-16by9">
@@ -15,7 +15,9 @@
 
 	<script>
 		var that = this;
+		this.userPhotoURL = "http://placehold.it/50x50";
 		console.log('members.tag');
+		console.log(user);
 	</script>
 
 	<style>
