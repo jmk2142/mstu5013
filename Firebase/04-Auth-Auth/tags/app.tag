@@ -28,10 +28,12 @@
 
 				that.user = userObj;
 				user = that.user; // set global user
+				console.log('Good');
 			} else {
 				// User is not signed in.
 				that.user = null;
 				user = null; // release global user
+				console.log('BAD');
 			}
 			that.update();
 		});
