@@ -1,0 +1,170 @@
+{
+	"students": {
+		"-KgIKgY-ZFWjxL8umabl": {
+			"name": "Adam",
+			"age": 18,
+			"gender": "male",
+			"areaOfStudy": "science",
+			"characteristics": {
+				"happy": true,
+				"smart": true,
+				"handsome": true
+			}
+		},
+		"-KgIKgj7biGkfH5PToOY": {
+			"name": "Brianna",
+			"age": 16,
+			"gender": "female",
+			"areaOfStudy": "art",
+			"characteristics": {
+				"creative": true
+			}
+		},
+		"-KgIKh9RGrugnC22wkgK": {
+			"name": "Charlie",
+			"age": 45,
+			"gender": "male",
+			"areaOfStudy": "science",
+			"characteristics": {
+				"pretty": true,
+				"smart": true,
+				"handy": true
+			}
+		},
+		"-KgIKhEl1uZssRHtoNCQ": {
+			"name": "Debbie",
+			"age": 50,
+			"gender": "female",
+			"areaOfStudy": "art",
+			"characteristics": {
+				"creative": true,
+				"mean": true
+			}
+		},
+		"-KgIKhImmNTqJ6fcNcMM": {
+			"name": "Eddie",
+			"age": 19,
+			"gender": "male",
+			"areaOfStudy": "science",
+			"characteristics": {
+				"brave": true
+			}
+		},
+		"-KgIKhMsTK8jcb2p0jHA": {
+			"name": "Fatma",
+			"age": 25,
+			"gender": "female",
+			"areaOfStudy": "art",
+			"characteristics": {
+				"kind": true
+			}
+		},
+		"-KgIKi02rr_Nc9CUy1sG": {
+			"name": "Greg",
+			"age": 12,
+			"gender": "male",
+			"areaOfStudy": "science",
+			"characteristics": {
+				"kind": true
+			}
+		},
+		"-KgIKi3x2XqXcb6NLlTL": {
+			"name": "Hallie",
+			"age": 30,
+			"gender": "female",
+			"areaOfStudy": "art",
+			"characteristics": {
+				"brave": true,
+				"mean": true
+			}
+		},
+		"-KgIKi8BcezhKuoWI0hB": {
+			"name": "Ignacio",
+			"age": 68,
+			"gender": "n/a",
+			"areaOfStudy": "science",
+			"characteristics": {
+				"happy": true,
+				"smart": true,
+				"creative": true,
+				"pretty": true,
+				"kind": true,
+				"brave": true,
+				"humorous": true
+			}
+		},
+		"-KgIKiCgsJi7lZGK_aoC": {
+			"name": "Jackie",
+			"age": 25,
+			"gender": "n/a",
+			"areaOfStudy": "art",
+			"characteristics": {
+				"kind": true,
+				"brave": true,
+				"helpful": true
+			}
+		}
+	},
+	"traits": {
+		"happy": {
+			"-KgIKgY-ZFWjxL8umabl": true,
+			"-KgIKi8BcezhKuoWI0hB": true
+		},
+		"handy": {
+			"-KgIKh9RGrugnC22wkgK": true
+		},
+		"handsome": {
+			"-KgIKgY-ZFWjxL8umabl": true
+		},
+		"helpful": {
+			"-KgIKiCgsJi7lZGK_aoC": true
+		},
+		"humorous": {
+			"-KgIKi8BcezhKuoWI0hB": true
+		},
+		"smart": {
+			"-KgIKgY-ZFWjxL8umabl": true,
+			"-KgIKi8BcezhKuoWI0hB": true
+		},
+		"creative": {
+			"-KgIKgj7biGkfH5PToOY": true,
+			"-KgIKhEl1uZssRHtoNCQ": true,
+			"-KgIKi8BcezhKuoWI0hB": true
+		},
+		"pretty": {
+			"-KgIKh9RGrugnC22wkgK": true,
+			"-KgIKi8BcezhKuoWI0hB": true
+		},
+		"smart": {
+			"-KgIKh9RGrugnC22wkgK": true
+		},
+		"mean": {
+			"-KgIKhEl1uZssRHtoNCQ": true,
+			"-KgIKi3x2XqXcb6NLlTL": true
+		},
+		"kind": {
+			"-KgIKhMsTK8jcb2p0jHA": true,
+			"-KgIKi02rr_Nc9CUy1sG": true,
+			"-KgIKi8BcezhKuoWI0hB": true,
+			"-KgIKiCgsJi7lZGK_aoC": true
+		},
+		"brave": {
+			"-KgIKhImmNTqJ6fcNcMM": true,
+			"-KgIKi3x2XqXcb6NLlTL": true,
+			"-KgIKi8BcezhKuoWI0hB": true,
+			"-KgIKiCgsJi7lZGK_aoC": true
+		}
+	},
+	"areasOfStudy": {
+		"art": {
+			"description": "Covers arts, humanities, and other non-science things?",
+			"fundsAllocated": 1000000,
+			"programEst": 2001
+		},
+		"sciences": {
+			"description": "Covers math, science, and engineering disciplines.",
+			"fundsAllocated": 7000000,
+			"programEst": 2007
+		}
+	}
+}
