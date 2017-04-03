@@ -5,7 +5,7 @@
 		<div class="col-md-4">
 			<!-- 16:9 aspect ratio -->
 			<div class="embed-responsive embed-responsive-16by9">
-				<iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/LDaayQj-vq8?autoplay=0" src="" frameborder="0" allowfullscreen></iframe>
+				<iframe class="embed-responsive-item" width="560" height="315" src="https://www.youtube.com/embed/LDaayQj-vq8?autoplay=1" src="" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
 	</div>
@@ -21,6 +21,7 @@
 	<h2 class="page-header">PUBLIC CONTENT</h2>
 	<p>Even if it's not yours, we would still like to see it. We want to give <strong>read authorization</strong> to the public.</p>
 	<comments-public></comments-public>
+	<br><br>
 
 	<script>
 		var that = this;

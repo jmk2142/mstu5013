@@ -19,9 +19,15 @@
 					userID: user.uid, // global Google authenticated user object
 					author: user.displayName,
 					message: this.refs.comment.value,
-					sharePublic: false
+					public: false,
+					createdAt: firebase.database.ServerValue.TIMESTAMP,
+					modifiedAt: firebase.database.ServerValue.TIMESTAMP
 				};
-				myCommentsRef.child(key).set(comment);
+				myCommentsRef.child(key).set(comment).then(function(result){
+				  console.log(result);
+				}).catch(function(error){
+				  console.log(error.message);
+				});
 
 				this.reset();
 			}

@@ -1,0 +1,19 @@
+{
+  "rules": {
+    "comments": {
+      "public": {
+        ".read": true,
+        "$commentID": {
+          ".write": "!data.exists() || (data.exists() && data.child('userID').val() === auth.uid)",
+          ".validate": "newData.child('userID').val() === auth.uid"
+        }
+      },
+      "users": {
+        "$userID": {
+          ".read": "auth.uid === $userID",
+          ".write": "auth.uid === $userID"
+        }
+      }
+    }
+  }
+}

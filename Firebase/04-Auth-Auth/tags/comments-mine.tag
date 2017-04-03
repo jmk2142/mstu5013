@@ -1,11 +1,9 @@
 <comments-mine>
-	<p>LIST OF MY COMMENTS</p>
 	<div class="comment" each={ myComments }>
-		<button class="btn btn-mini {btn-success:!public, btn-warning:public}" onclick={ parent.togglePublic }>{ public ? "UNPUBLISH" : "PUBLISH"}</button>
 		<button class="btn btn-mini btn-danger" onclick={ parent.deleteComment }>DELETE</button>
-		<strong>{ user.displayName }</strong> :
+		<button class="btn btn-mini {btn-success:!public, btn-warning:public}" onclick={ parent.togglePublic }>{ public ? "UNPUBLISH" : "PUBLISH"}</button>
+		&nbsp;&nbsp;<strong>{ user.displayName }</strong> :
 		<span>{ message }</span>
-
 	</div>
 
 	<script>
@@ -14,7 +12,6 @@
 
 		var database = firebase.database();
 		var myCommentsRef = database.ref('comments/users/' + user.uid);
-		var publicCommentsRef = database.ref('comments/public');
 
 		myCommentsRef.on('value', function(snapshot) {
 			var commentsData = snapshot.val();
@@ -31,25 +28,39 @@
 		togglePublic(event) {
 			var comment = event.item;
 			comment.public = !comment.public;
+			comment.modifiedAt = firebase.database.ServerValue.TIMESTAMP;
 
 			var updates = {};
 
 			// Look at what this does to the Data architecture on the DB.
 			// What does toggling public do with regard to comments?
 			if (comment.public) {
-				updates[`comments/public/${comment.id}`] = comment;
-				updates[`comments/users/${user.uid}/${comment.id}`] = comment;
+				updates['public/' + comment.id] = comment;
+				updates['users/' + user.uid + '/' + comment.id] = comment;
 			} else {
-				updates[`comments/public/${comment.id}`] = null;
-				updates[`comments/users/${user.uid}/${comment.id}`] = comment;
+				updates['public/' + comment.id] = null;
+				updates['users/' + user.uid + '/' + comment.id] = comment;
 			}
 
-			database.ref().update(updates);
+			// One call to write to multiple locations
+			database.ref('comments').update(updates);
 		}
 
 		this.deleteComment = function(event) {
-		  console.log('deleteComment', event.item);
+			var comment = event.item;
+
+			console.log(comment);
+
+			var updates = {};
+			updates['public/' + comment.id] = null;
+			updates['users/' + user.uid + '/' + comment.id] = null;
+
+			database.ref('comments').update(updates);
 		};
+
+		this.on('unmount', function(event) {
+		  myCommentsRef.off('value');
+		});
 
 	</script>
 

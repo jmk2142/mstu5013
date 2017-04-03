@@ -17,23 +17,11 @@
 		firebase.auth().onAuthStateChanged(function(userObj) {
 			if (userObj) {
 				// User is signed in.
-				// The user object passed back by the callback function has a variety of properties like so.
-				var displayName = userObj.displayName;
-				var email = userObj.email;
-				var emailVerified = userObj.emailVerified;
-				var photoURL = userObj.photoURL;
-				var isAnonymous = userObj.isAnonymous;
-				var uid = userObj.uid;
-				var providerData = userObj.providerData;
-
 				that.user = userObj;
 				user = that.user; // set global user
-				console.log('Good');
 			} else {
 				// User is not signed in.
 				that.user = null;
-				user = null; // release global user
-				console.log('BAD');
 			}
 			that.update();
 		});
