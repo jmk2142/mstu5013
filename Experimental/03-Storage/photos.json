@@ -1,0 +1,92 @@
+{
+  "photos" : {
+    "-KgpgRXrHH7JMV9YiGTP" : {
+      "author" : "Jin Kuwata",
+      "authorID" : "Mfi93sif245islf24xY",
+      "caption" : "Is a great cartoon.",
+      "id" : "-KgpgRXrHH7JMV9YiGTP",
+      "photoURL" : "https://firebasestorage.googleapis.com/v0/b/todo-firebase-37f73.appspot.com/o/images%2FMfi93sif245islf24xY%2F2b6743d8aa725745f8b7c87c70cc6f04.gif?alt=media&token=c5253ac5-14a8-4e4a-8fa6-858b5ce3b67e",
+      "title" : "Steven Universe"
+    },
+    "-Kgpg_y4d6pQPOaHjiSq" : {
+      "author" : "Jin Kuwata",
+      "authorID" : "Mfi93sif245islf24xY",
+      "caption" : "Something goes here. Some poem?",
+      "id" : "-Kgpg_y4d6pQPOaHjiSq",
+      "photoURL" : "https://firebasestorage.googleapis.com/v0/b/todo-firebase-37f73.appspot.com/o/images%2FMfi93sif245islf24xY%2Ftumblr_nmgxl92kUw1qbr3fho1_1280.png?alt=media&token=e3e7854c-a547-4664-b02b-184339f33340",
+      "title" : "Photo A"
+    },
+    "-KgpgeFdvMH_WH3hPCzv" : {
+      "author" : "Jin Kuwata",
+      "authorID" : "Mfi93sif245islf24xY",
+      "caption" : "More captions go here.",
+      "id" : "-KgpgeFdvMH_WH3hPCzv",
+      "photoURL" : "https://firebasestorage.googleapis.com/v0/b/todo-firebase-37f73.appspot.com/o/images%2FMfi93sif245islf24xY%2FO7TNzng.jpg?alt=media&token=5bbfde75-cb20-49eb-82cc-128a38816756",
+      "title" : "Photo B"
+    },
+    "-KgpghE9RiQnBTqzb8CK" : {
+      "author" : "Jin Kuwata",
+      "authorID" : "Mfi93sif245islf24xY",
+      "caption" : "More captions go here.",
+      "id" : "-KgpghE9RiQnBTqzb8CK",
+      "photoURL" : "https://firebasestorage.googleapis.com/v0/b/todo-firebase-37f73.appspot.com/o/images%2FMfi93sif245islf24xY%2Ftumblr_nkm3fjELhF1sxagvto2_1280.jpg?alt=media&token=b33c1bcb-447e-4fb2-82fb-081f1de0fc4a",
+      "title" : "Photo C"
+    },
+    "-Kgpgq77DUgGs89XsaPX" : {
+      "author" : "Jin Kuwata",
+      "authorID" : "Mfi93sif245islf24xY",
+      "caption" : "More captions go here.",
+      "id" : "-Kgpgq77DUgGs89XsaPX",
+      "photoURL" : "https://firebasestorage.googleapis.com/v0/b/todo-firebase-37f73.appspot.com/o/images%2FMfi93sif245islf24xY%2F53552_steven_universe.jpg?alt=media&token=424ec2e8-f136-4773-8fc1-2c0a68c6a9d9",
+      "title" : "Photo E"
+    },
+    "-KgpibfUajPEi4RZzr8D" : {
+      "author" : "Jin Kuwata",
+      "authorID" : "Mfi93sif245islf24xY",
+      "caption" : "Another caption.",
+      "id" : "-KgpibfUajPEi4RZzr8D",
+      "photoURL" : "https://firebasestorage.googleapis.com/v0/b/todo-firebase-37f73.appspot.com/o/images%2FMfi93sif245islf24xY%2Ftumblr_nmgxl92kUw1qbr3fho3_1280.png?alt=media&token=8fb38f0d-9c4a-45a2-802b-04ff9a9575db",
+      "title" : "Photo F"
+    },
+    "-KgplhU7REXvKsRwqUkI" : {
+      "author" : "Jin Kuwata",
+      "authorID" : "Mfi93sif245islf24xY",
+      "caption" : "Last Photo",
+      "id" : "-KgplhU7REXvKsRwqUkI",
+      "photoURL" : "https://firebasestorage.googleapis.com/v0/b/todo-firebase-37f73.appspot.com/o/images%2FMfi93sif245islf24xY%2Ftumblr_nmgxl92kUw1qbr3fho2_1280.png?alt=media&token=68869ee1-3ef8-4c5f-99c6-4fd33a932960",
+      "title" : "Photo G"
+    },
+    "-KgqP5pkSZkwLrtSqOYw" : {
+      "author" : "Jin Kuwata",
+      "authorID" : "Mfi93sif245islf24xY",
+      "caption" : "Something.",
+      "id" : "-KgqP5pkSZkwLrtSqOYw",
+      "photoURL" : "https://firebasestorage.googleapis.com/v0/b/todo-firebase-37f73.appspot.com/o/images%2FMfi93sif245islf24xY%2Ftumblr_nmgxl92kUw1qbr3fho6_1280.png?alt=media&token=6a015db4-2cb7-4bbd-80db-e67349e9aad3",
+      "title" : "Photo H"
+    },
+    "-KgqPfVnpUonctcGqopI" : {
+      "author" : "Jin Kuwata",
+      "authorID" : "Mfi93sif245islf24xY",
+      "caption" : "From sailor moon?",
+      "id" : "-KgqPfVnpUonctcGqopI",
+      "photoURL" : "https://firebasestorage.googleapis.com/v0/b/todo-firebase-37f73.appspot.com/o/images%2FMfi93sif245islf24xY%2Fsteven-anime.gif?alt=media&token=f14b8bc6-106d-4b63-9365-5fb59de5aee9",
+      "title" : "Sailor Steven"
+    },
+    "-KgqQ2WG3uZHMh6Un_q_" : {
+      "author" : "Jin Kuwata",
+      "authorID" : "Mfi93sif245islf24xY",
+      "caption" : "Running hard.",
+      "id" : "-KgqQ2WG3uZHMh6Un_q_",
+      "photoURL" : "https://firebasestorage.googleapis.com/v0/b/todo-firebase-37f73.appspot.com/o/images%2FMfi93sif245islf24xY%2FSteven-Running.gif?alt=media&token=7f42c333-11d6-4807-86a7-4d2ce3e5d2e5",
+      "title" : "Running"
+    },
+    "-KgqQJkWzMErqbN45iK_" : {
+      "author" : "Jin Kuwata",
+      "authorID" : "Mfi93sif245islf24xY",
+      "caption" : "Promo cap?",
+      "id" : "-KgqQJkWzMErqbN45iK_",
+      "photoURL" : "https://firebasestorage.googleapis.com/v0/b/todo-firebase-37f73.appspot.com/o/images%2FMfi93sif245islf24xY%2FSteven-Title.gif?alt=media&token=b834084c-e3c0-44d1-be5b-042f94965264",
+      "title" : "Title Shot"
+    }
+  }
+}
