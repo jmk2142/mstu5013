@@ -12,6 +12,26 @@
 		var that = this;
 		this.user = user; // Comes from the global user.
 
+		/* --------------------------------------------------
+			AUTHENTICATION -> firebase.auth()
+			1) onAuthStateChanged()
+			2) signInWithPopup()
+			3) signOut()
+
+			ATOMIC WRITES
+			1) ref.update(updateObject)
+			2) See data architecture implications
+
+			AUTHORIZATION
+			1) Rules and cascades
+			2) Keywords
+				- auth
+				- $something
+				- data
+				- newData
+		-------------------------------------------------- */
+
+
 		// AUTHENTICATION LISTENER
 		// Once we code this, we have a "live" listener that is constantly listening for whether the user is logged in or not. It will fire the callback if it "hears" a login, or logout.
 		firebase.auth().onAuthStateChanged(function(userObj) {

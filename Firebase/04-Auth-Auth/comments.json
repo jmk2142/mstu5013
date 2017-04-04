@@ -1,0 +1,82 @@
+{
+  "comments" : {
+    "public" : {
+      "-Kglp5CLR7YMFeB_Nc31" : {
+        "author" : "Jin Kuwata",
+        "createdAt" : 1491189654395,
+        "id" : "-Kglp5CLR7YMFeB_Nc31",
+        "message" : "Cats are happy creatures.",
+        "modifiedAt" : 1491189981942,
+        "public" : true,
+        "userID" : "MpbQb5PEAEe93gzkMJ4jndsW1IF2"
+      },
+      "-Kglp6o8PwCag9s5cgei" : {
+        "author" : "Jin Kuwata",
+        "createdAt" : 1491189660973,
+        "id" : "-Kglp6o8PwCag9s5cgei",
+        "message" : "Nyancat is the best.",
+        "modifiedAt" : 1491189982624,
+        "public" : true,
+        "userID" : "MpbQb5PEAEe93gzkMJ4jndsW1IF2"
+      },
+      "-KglqSmPLjK6PKL8aso5" : {
+        "author" : "Jin Kuwata",
+        "createdAt" : 1491190013113,
+        "id" : "-KglqSmPLjK6PKL8aso5",
+        "message" : "Nyancats dream of dessert.",
+        "modifiedAt" : 1491190014450,
+        "public" : true,
+        "userID" : "MpbQb5PEAEe93gzkMJ4jndsW1IF2"
+      }
+    },
+    "users" : {
+      "MpbQb5PEAEe93gzkMJ4jndsW1IF2" : {
+        "-Kglp5CLR7YMFeB_Nc31" : {
+          "author" : "Jin Kuwata",
+          "createdAt" : 1491189654395,
+          "id" : "-Kglp5CLR7YMFeB_Nc31",
+          "message" : "Cats are happy creatures.",
+          "modifiedAt" : 1491189981942,
+          "public" : true,
+          "userID" : "MpbQb5PEAEe93gzkMJ4jndsW1IF2"
+        },
+        "-Kglp6A9m0cQW2PSKpIE" : {
+          "author" : "Jin Kuwata",
+          "createdAt" : 1491189658351,
+          "id" : "-Kglp6A9m0cQW2PSKpIE",
+          "message" : "Poptart cat!",
+          "modifiedAt" : 1491189809646,
+          "public" : false,
+          "userID" : "MpbQb5PEAEe93gzkMJ4jndsW1IF2"
+        },
+        "-Kglp6o8PwCag9s5cgei" : {
+          "author" : "Jin Kuwata",
+          "createdAt" : 1491189660973,
+          "id" : "-Kglp6o8PwCag9s5cgei",
+          "message" : "Nyancat is the best.",
+          "modifiedAt" : 1491189982624,
+          "public" : true,
+          "userID" : "MpbQb5PEAEe93gzkMJ4jndsW1IF2"
+        },
+        "-KglqSmPLjK6PKL8aso5" : {
+          "author" : "Jin Kuwata",
+          "createdAt" : 1491190013113,
+          "id" : "-KglqSmPLjK6PKL8aso5",
+          "message" : "Nyancats dream of dessert.",
+          "modifiedAt" : 1491190014450,
+          "public" : true,
+          "userID" : "MpbQb5PEAEe93gzkMJ4jndsW1IF2"
+        },
+        "-KglqUavjr530zva8Iiy" : {
+          "author" : "Jin Kuwata",
+          "createdAt" : 1491190020571,
+          "id" : "-KglqUavjr530zva8Iiy",
+          "message" : "Cupcakes for cats.",
+          "modifiedAt" : 1491190020571,
+          "public" : false,
+          "userID" : "MpbQb5PEAEe93gzkMJ4jndsW1IF2"
+        }
+      }
+    }
+  }
+}
