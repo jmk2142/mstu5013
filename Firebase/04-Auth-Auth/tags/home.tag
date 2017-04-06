@@ -16,7 +16,6 @@
 
 	<script>
 		var that = this;
-		console.log('home.tag');
 	</script>
 
 	<style>

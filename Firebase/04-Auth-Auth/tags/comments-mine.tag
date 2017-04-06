@@ -8,16 +8,21 @@
 
 	<script>
 		var that = this;
+
+		this.user = firebase.auth().currentUser;
 		this.myComments = [];
 
 		var database = firebase.database();
-		var myCommentsRef = database.ref('comments/users/' + user.uid);
+		var myCommentsRef = database.ref('comments/users/' + this.user.uid);
 
 		myCommentsRef.on('value', function(snapshot) {
 			var commentsData = snapshot.val();
 
 			// commentsData could be null (no results), then we cant get values -> error
 			if (commentsData) {
+				// Note - Object.values() does NOT work in safari.
+				// if you want full cross-browser support, you need to convert
+				// the object to an array with a traditional for in loop.
 				that.myComments = Object.values(commentsData);
 			} else {
 				that.myComments = [];
@@ -36,10 +41,10 @@
 			// What does toggling public do with regard to comments?
 			if (comment.public) {
 				updates['public/' + comment.id] = comment;
-				updates['users/' + user.uid + '/' + comment.id] = comment;
+				updates['users/' + this.user.uid + '/' + comment.id] = comment;
 			} else {
 				updates['public/' + comment.id] = null;
-				updates['users/' + user.uid + '/' + comment.id] = comment;
+				updates['users/' + this.user.uid + '/' + comment.id] = comment;
 			}
 
 			// One call to write to multiple locations
@@ -53,11 +58,17 @@
 
 			var updates = {};
 			updates['public/' + comment.id] = null;
-			updates['users/' + user.uid + '/' + comment.id] = null;
+			updates['users/' + this.user.uid + '/' + comment.id] = null;
 
 			database.ref('comments').update(updates);
 		};
 
+		// Dummy listener
+		database.ref().on('value', function(snap){
+		  console.log('LISTENER TRIGGERED');
+		});
+
+		// Removing event listeners
 		this.on('unmount', function(event) {
 		  myCommentsRef.off('value');
 		});

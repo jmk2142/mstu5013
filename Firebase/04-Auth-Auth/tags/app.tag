@@ -10,7 +10,11 @@
 
 	<script>
 		var that = this;
-		this.user = user; // Comes from the global user.
+
+		// firebase.auth().currentUser will always reflect the current
+		// authenticated user state. Gives a user object if logged in.
+		// Gives null if logged out.
+		this.user = firebase.auth().currentUser;
 
 		/* --------------------------------------------------
 			AUTHENTICATION -> firebase.auth()
@@ -35,14 +39,7 @@
 		// AUTHENTICATION LISTENER
 		// Once we code this, we have a "live" listener that is constantly listening for whether the user is logged in or not. It will fire the callback if it "hears" a login, or logout.
 		firebase.auth().onAuthStateChanged(function(userObj) {
-			if (userObj) {
-				// User is signed in.
-				that.user = userObj;
-				user = that.user; // set global user
-			} else {
-				// User is not signed in.
-				that.user = null;
-			}
+			that.user = firebase.auth().currentUser;
 			that.update();
 		});
 
@@ -51,31 +48,12 @@
 			var provider = new firebase.auth.GoogleAuthProvider();
 
 			// Popover signup is probably the most simple and trusted.
-			firebase.auth().signInWithPopup(provider).then(function (result) {
-
-				// Setting it to global user for convenience.
-				user = result.user;
-
-			}).catch(function (error) {
-				// Handle Errors here.
-				console.log('Error:', error.code, error.message);
-				console.log('Email of account used:', error.email);
-				console.log('Credential type used:', error.credential);
-			});
+			firebase.auth().signInWithPopup(provider);
 		}
 
 		logOut(event) {
-			firebase.auth().signOut().then(function() {
-				// Sign-out OK - nothing really important here.
-				// Remember, we have the auth listener in app.tag
-			}).catch(function(error) {
-				// An error happened.
-			});
+			firebase.auth().signOut();
 		}
-
-		this.on('update', function(event) {
-			console.log('app.tag update');
-		});
 
 	</script>
 

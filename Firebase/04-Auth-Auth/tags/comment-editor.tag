@@ -5,19 +5,21 @@
 
 	<script>
 		var that = this;
+		this.user = firebase.auth().currentUser;
+
 		var database = firebase.database();
-
 		// This reference is important - see database for architecture
-		var myCommentsRef = database.ref('comments/users/' + user.uid);
+		var myCommentsRef = database.ref('comments/users/' + this.user.uid);
 
-		saveComment(event){
+
+		saveComment(event) {
 			if ((event.type === "keypress" && event.which === 13) || event.type === "click") {
 
 				var key = myCommentsRef.push().key;
 				var comment = {
 					id: key, // Save copy of commentID into my object - easier
-					userID: user.uid, // global Google authenticated user object
-					author: user.displayName,
+					userID: this.user.uid, // global Google authenticated user object
+					author: this.user.displayName,
 					message: this.refs.comment.value,
 					public: false,
 					createdAt: firebase.database.ServerValue.TIMESTAMP,
