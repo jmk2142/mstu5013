@@ -2,7 +2,7 @@
 	<div class="comment" each={ myComments }>
 		<button class="btn btn-mini btn-danger" onclick={ parent.deleteComment }>DELETE</button>
 		<button class="btn btn-mini {btn-success:!public, btn-warning:public}" onclick={ parent.togglePublic }>{ public ? "UNPUBLISH" : "PUBLISH"}</button>
-		&nbsp;&nbsp;<strong>{ user.displayName }</strong> :
+		&nbsp;&nbsp;<strong>{ author }</strong> :
 		<span>{ message }</span>
 	</div>
 
@@ -64,13 +64,22 @@
 		};
 
 		// Dummy listener
-		database.ref().on('value', function(snap){
-		  console.log('LISTENER TRIGGERED');
-		});
+		// database.ref().on('value', function(snap){
+		//   console.log('comments-mine: DUMMY Listener/Handler');
+		// });
+		// database.ref().on('value', function(snap){
+		//   console.log('comments-mine: DUMMY Listener/Handler');
+		// });
+		// database.ref().on('value', function(snap){
+		//   console.log('comments-mine: DUMMY Listener/Handler');
+		// });
 
 		// Removing event listeners
 		this.on('unmount', function(event) {
 		  myCommentsRef.off('value');
+		});
+		this.on('unmounted', function(event) {
+			console.log('unmounted');
 		});
 
 	</script>
