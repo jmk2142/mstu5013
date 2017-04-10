@@ -1,0 +1,23 @@
+{
+  "rules": {
+    "comments": {
+      "public": {
+        ".read": true,
+        "$commentID": {
+          // Try removing the !data.exists() || portion and see what breaks
+          ".write": "!data.exists() || (data.exists() && data.child('userID').val() === auth.uid)",
+          ".validate": "newData.child('userID').val() === auth.uid"
+        }
+      },
+      "users": {
+        "$userID": {
+          ".read": "auth.uid === $userID",
+          ".write": "auth.uid === $userID",
+          "$commentID": {
+          	".validate": "newData.child('userID').val() === auth.uid"
+          }
+        }
+      }
+    }
+  }
+}
