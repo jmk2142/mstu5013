@@ -17,6 +17,10 @@
           }
         }
       }
+    },
+		"photos": {
+      ".read":true,
+      ".write":true
     }
   }
 }
