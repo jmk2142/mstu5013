@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Routing in Riot</title>
+</head>
+<body>
+
+	<app></app>
+
+	<!-- Make sure all your tag files are listed like this. -->
+	<script src="tags/app.tag" type="riot/tag"></script>
+	<script src="tags/navbar.tag" type="riot/tag"></script>
+	<script src="tags/page-a.tag" type="riot/tag"></script>
+	<script src="tags/page-b.tag" type="riot/tag"></script>
+	<script src="tags/page-c.tag" type="riot/tag"></script>
+	<script src="tags/subnav.tag" type="riot/tag"></script>
+
+	<!-- Part of Page B -->
+	<script src="tags/subpage-breads.tag" type="riot/tag"></script>
+	<script src="tags/subpage-cakes.tag" type="riot/tag"></script>
+	<script src="tags/subpage-cookies.tag" type="riot/tag"></script>
+
+
+	<!-- Load RiotJS and the COMPILER, which will transform your tags into JS -->
+	<!-- MUST BE VERSION 3.1.x -->
+	<script src="https://cdn.jsdelivr.net/riot/3.4.1/riot+compiler.min.js"></script>
+	<!-- SPECIAL ROUTE+TAG library file -->
+	<script src="https://cdn.jsdelivr.net/riot-route/3.1.1/route.min.js"></script>
+
+	<script>
+
+		riot.mount('app');
+
+	</script>
+</body>
+</html>
