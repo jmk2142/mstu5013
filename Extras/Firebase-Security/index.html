@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Security</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+</head>
+<body>
+
+	<div class="container">
+		<app></app>
+	</div>
+
+
+	<!-- FIREBASE -->
+	<script src="https://www.gstatic.com/firebasejs/3.7.8/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyCqmOOB2wbcKBxMbo-Vhsdmg1Lcl51CYLA",
+			authDomain: "todo-firebase-37f73.firebaseapp.com",
+			databaseURL: "https://todo-firebase-37f73.firebaseio.com",
+			projectId: "todo-firebase-37f73",
+			storageBucket: "todo-firebase-37f73.appspot.com",
+			messagingSenderId: "308321612464"
+		};
+		firebase.initializeApp(config);
+	</script>
+
+	<!-- MATERIALIZE - Like Bootstrap -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+	<!-- RIOT CODE -->
+	<script src="tags/app.tag" type="riot/tag"></script>
+
+	<script src="https://cdn.jsdelivr.net/riot/3.1/riot+compiler.js"></script>
+
+	<script>
+		riot.mount('*');
+	</script>
+
+</body>
+</html>
