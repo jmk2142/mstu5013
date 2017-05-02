@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<title>Array Manipulation</title>
+</head>
+<body>
+
+	<!-- CUSTOM DATASET -->
+	<script src="js/data.js"></script>
+
+	<!-- UNDERSCORE -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore.js"></script>
+
+	<!-- RIOT STUFF -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<app></app>
+			</div>
+		</div>
+	</div>
+
+
+	<script src="tags/app.tag" type="riot/tag"></script>
+	<script src="tags/sorter.tag" type="riot/tag"></script>
+	<script src="https://cdn.jsdelivr.net/riot/3.1/riot+compiler.js"></script>
+	<script>
+		riot.mount('*', myData);
+	</script>
+
+</body>
+</html>
