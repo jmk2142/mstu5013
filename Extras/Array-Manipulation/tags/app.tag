@@ -1,6 +1,6 @@
 <app>
 	<div class="page-header">
-		<h1>COLORS</h1>
+		<h1>COLORS <small class="pull-right"><a href="#underscore">Jump to Underscore Challenges</a></small></h1>
 	</div>
 
 
@@ -31,22 +31,35 @@
 	<!-- DATA EXAMPLES -->
 	<h3>DATA</h3>
 	<div class="row">
-		<div class="col-sm-3">
+		<div class="col-sm-4">
 			<pre><strong>FILTERED</strong><br><hr><br>{ JSON.stringify(filtered, null, 2) }</pre>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-4">
 			<pre><strong>ORIGINAL RECIPE</strong><br><hr><br>{ JSON.stringify(colors, null, 2) }</pre>
 		</div>
-		<div class="col-sm-3">
+		<div class="col-sm-4">
 			<pre><strong>MAPPED</strong><br><hr><br>{ JSON.stringify(mapped, null, 2) }</pre>
-		</div>
-		<div class="col-sm-3">
-			<pre><strong>UNDERSCORE CHALLENGE</strong><br><hr><br>{ JSON.stringify(myTestData, null, 2) }</pre>
 		</div>
 	</div>
 
 	<br><br>
+
 	<!-- MY TEST DATA WITH UNDERSCORE -->
+	<!-- <h3 id="underscore">UNDERSCORE CHALLENGES</h3>
+	<div class="row">
+		<div class="col-sm-6">
+			<pre><strong>ORIGINAL RECIPE</strong><br><strong>LENGTH: </strong>{ colors.length }<hr><br>{ JSON.stringify(colors, null, 2) }</pre>
+		</div>
+		<div class="col-sm-6">
+			<pre><strong>UNDERSCORE CHALLENGES</strong><br><strong>LENGTH: </strong>{ _.isArray(underscoreData) ? underscoreData.length : underscoreData }<hr><br>{ JSON.stringify(underscoreData, null, 2) }</pre>
+		</div>
+	</div> -->
+
+
+
+	<!-- IMPLEMENTATION CHALLENGE -->
+	<!-- <sorter colors={ colors }></sorter> -->
+
 
 	<script>
 		var that = this;
@@ -179,7 +192,9 @@
 
 		-------------------------------------------------------------------------------- */
 
-		// this.myTestData = _.someUnderscoreMethod(this.colors, function(element, index, list){ ... });
+		this.underscoreData = _.filter(this.colors, function(element, index, list){
+			return true;
+		});
 
 
 	</script>
