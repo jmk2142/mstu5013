@@ -33,6 +33,7 @@
 			this.sortType = sortType;
 
 			if (this.sortType === 'sortAscending') {
+				// Manipulate the array into an Ascending order.
 				// this.sortedData = ...;
 			}
 

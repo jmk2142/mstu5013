@@ -35,7 +35,7 @@
 			<pre><strong>FILTERED</strong><br><hr><br>{ JSON.stringify(filtered, null, 2) }</pre>
 		</div>
 		<div class="col-sm-4">
-			<pre><strong>ORIGINAL RECIPE</strong><br><hr><br>{ JSON.stringify(colors, null, 2) }</pre>
+			<pre class="originalPre"><strong>ORIGINAL RECIPE</strong><br><hr><br>{ JSON.stringify(colors, null, 2) }</pre>
 		</div>
 		<div class="col-sm-4">
 			<pre><strong>MAPPED</strong><br><hr><br>{ JSON.stringify(mapped, null, 2) }</pre>
@@ -196,7 +196,6 @@
 			return true;
 		});
 
-
 	</script>
 
 	<style>
@@ -209,6 +208,9 @@
 		a[href="http://placehold.it"] {
 			background-color: tomato;
 			padding: 0 15px;
+		}
+		.originalPre {
+			background-color: oldlace;
 		}
 	</style>
 </app>
