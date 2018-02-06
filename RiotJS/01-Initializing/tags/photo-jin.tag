@@ -1,11 +1,13 @@
 <photo-jin>
 
+	<p>{ word }</p>
 	<div class="photoTitle"><strong>photo-jin.tag</strong></div>
 	<img src="http://placehold.it/300x300" alt="placeholder" />
 	<p>This is some demo text for this above image.</p>
 
 	<script>
 		console.log('Initialized photo-component.');
+		console.dir(this);
 	</script>
 
 	<style>

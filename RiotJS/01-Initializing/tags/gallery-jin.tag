@@ -1,8 +1,8 @@
 <gallery-jin>
-	
+
 	<strong>gallery-jin.tag</strong>
 	<div class="images">
-		<photo-jin each={ words }></photo-jin>
+		<photo-jin each={ word in words }></photo-jin>
 	</div>
 
 	<script>

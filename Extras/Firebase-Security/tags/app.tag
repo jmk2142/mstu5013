@@ -19,21 +19,25 @@
 					</div>
 				</div>
 				<button class="btn light-blue" onclick={ makeAnimal }>MAKE Animal</button>
-				<button class="btn light-blue" onclick={ makeUserAnimal }>MAKE User/Animal</button>
+				<button class="btn amber" onclick={ makeUserAnimal }>MAKE User/Animal</button>
 			</div>
 			<div class="divider"></div>
 			<div class="section">
 				<button class="btn light-blue" onclick={ getAnimals }>GET Animals</button>
+				<button class="btn amber" onclick={ getUserAnimals }>GET User/Animals</button>
 			</div>
 			<div class="divider"></div>
 			<div class="section">
-				<pre>{ JSON.stringify(animals, null, 2) }</pre>
+				<pre><strong>RESULTS:</strong><br>{ JSON.stringify(animals, null, 2) }</pre>
 			</div>
 		</div>
 	</div>
 
 	<script>
 		var that = this;
+
+		// FAKING another user's UID
+		const jinUserID = "MpbQb5PEAEe93gzkMJ4jndsW1IF2";
 
 		var database = firebase.database();
 		var animalsRef = database.ref('animals');
@@ -83,9 +87,6 @@
 			animal.name = this.refs.animalInput.value.toLowerCase();
 			this.refs.animalInput.value = "";
 
-			// FAKING another user's UID
-			const jinUserID = "MpbQb5PEAEe93gzkMJ4jndsW1IF2";
-
 			var key = usersRef.child(jinUserID).push().key;
 			animal.id = key;
 
@@ -105,6 +106,18 @@
 				that.update();
 			}).catch(function(error){
 			  console.error(error);
+				alert(error.message);
+			});
+		}
+
+		getUserAnimals(event) {
+			usersRef.child(jinUserID).once('value', function(snap){
+			  var data = snap.val();
+				that.animals = Object.values(data);
+				that.update();
+			}).catch(function(error){
+			  console.error(error);
+				alert(error.message);
 			});
 		}
 

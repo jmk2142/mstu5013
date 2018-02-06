@@ -1,0 +1,30 @@
+{
+  "friends" : {
+    "Mb3aS3KL-instructorID" : {
+      "9GTNM6ZkWNYl9DuStaYO3wvNOG33" : true,
+      "9vySBtItboTdkLU3JvmLpnvl9Uk2" : true,
+      "Au1OYeyGOmS770UGN3pObZyZpzj2" : true
+    }
+  },
+  "limited" : {
+    "Mb3aS3KL-instructorID" : {
+      "notesWiki" : "Jin, you should give up.\n@cynicalCat That's not nice!\nNo, he definitely should give up.",
+      "preferences" : "Friends, help me find someone smart, kind, and fun."
+    }
+  },
+  "private" : {
+    "Mb3aS3KL-instructorID" : {
+      "matchStatus" : "undecided",
+      "recipient" : "Jin Kuwata",
+      "recipientID" : "Mb3aS3KL-instructorID",
+      "sender" : "Jane Doe",
+      "senderID" : "JaneDoeUID-b35JS4sk9"
+    }
+  },
+  "public" : {
+    "-KifdA9s9ub9Tagbx7L5" : {
+      "displayName" : "Jin Kuwata",
+      "status" : "looking"
+    }
+  }
+}
