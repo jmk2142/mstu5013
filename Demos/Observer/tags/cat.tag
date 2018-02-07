@@ -1,6 +1,6 @@
 <cat>
 
-	<strong>CAT.TAG</strong> <span>{ magicNum }</span>
+	<img src="images/cat.jpg"> <strong>CAT.TAG</strong> <span>{ magicNum }</span>
 	<p>The cat hears: { data }</p>
 	<button onclick={ talkToDog }>"WOOF" data to Dog</button>
 
@@ -43,6 +43,10 @@
 			background-color: tomato;
 			border-radius: 1em;
 			font-weight: bold;
+		}
+		img {
+			width: 50px;
+			vertical-align: middle;
 		}
 	</style>
 </cat>

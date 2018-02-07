@@ -1,6 +1,6 @@
 <dog>
 
-	<strong>DOG.TAG</strong> <span>{ magicNum }</span>
+	<img src="images/dog.png"> <strong>DOG.TAG</strong> <span>{ magicNum }</span>
 	<p>The dog hears: { data }</p>
 	<button onclick={ talkToCat }>"MEOW" data to Cat</button>
 
@@ -44,6 +44,10 @@
 			border-radius: 1em;
 			color: #FFF;
 			font-weight: bold;
+		}
+		img {
+			width: 50px;
+			vertical-align: middle;
 		}
 	</style>
 </dog>
