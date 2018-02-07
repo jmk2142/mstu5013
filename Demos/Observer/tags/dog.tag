@@ -13,7 +13,7 @@
 
 		talkToCat(event) {
 			var randomNum = Math.floor(Math.random()*1000);
-			var dogMsg = "A howl at the moon would be purrrrfect. ~From Dog";
+			var dogMsg = "Howling at the moon together would be purrrrfect. ~From Dog";
 			observable.trigger('meow', dogMsg, randomNum);
 		}
 
