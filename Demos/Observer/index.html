@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+
+	<h1>Observer: Passing Data Between Tags</h1>
+
+	<pet-store></pet-store>
+
+	<script src="tags/pet-store.tag" type="riot/tag"></script>
+	<script src="tags/dog.tag" type="riot/tag"></script>
+	<script src="tags/cat.tag" type="riot/tag"></script>
+
+	<script src="https://cdn.jsdelivr.net/riot/3.1/riot+compiler.js"></script>
+
+	<script>
+		// Making the observable object accessible to all tags here.
+		var observable = riot.observable();
+
+		riot.mount('*');
+	</script>
+
+</body>
+</html>
