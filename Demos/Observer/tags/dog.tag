@@ -2,7 +2,7 @@
 
 	<strong>DOG.TAG</strong> <span>{ magicNum }</span>
 	<p>The dog hears: { data }</p>
-	<button onclick={ triggerMeow }>"MEOW" data to Cat</button>
+	<button onclick={ talkToCat }>"MEOW" data to Cat</button>
 
 	<script>
 		var that = this;
@@ -11,7 +11,7 @@
 		this.data = "Nothing";
 		this.magicNum = 0;
 
-		triggerMeow(event) {
+		talkToCat(event) {
 			var randomNum = Math.floor(Math.random()*1000);
 			var dogMsg = "A howl at the moon would be purrrrfect. ~From Dog";
 			observable.trigger('meow', dogMsg, randomNum);
