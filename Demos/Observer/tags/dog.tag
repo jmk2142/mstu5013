@@ -1,6 +1,6 @@
 <dog>
 
-	<img src="images/dog.png"> <strong>DOG.TAG</strong> <span>{ magicNum }</span>
+	<img src="images/dog.png"> <strong>DOG.TAG</strong> <span>{ magicAlpha }</span>
 	<p>The dog hears: { data }</p>
 	<button onclick={ talkToCat }>"MEOW" data to Cat</button>
 
@@ -9,7 +9,7 @@
 		console.log('dog.tag');
 
 		this.data = "Nothing";
-		this.magicNum = 0;
+		this.magicAlpha = "...";
 
 		talkToCat(event) {
 			var randomNum = Math.floor(Math.random()*1000);
@@ -17,15 +17,15 @@
 			observable.trigger('meow', dogMsg, randomNum);
 		}
 
-		observable.on('woof', function(passedData, someNum){
+		observable.on('woof', function(passedData, someAlpha){
 		  that.data = passedData;
-			that.magicNum = someNum;
+			that.magicAlpha = someAlpha;
 			that.update();
 		});
 
 		observable.on('reset', function(){
 		  that.data = "Nothing";
-			that.magicNum = 0;
+			that.magicAlpha = "...";
 		});
 
 	</script>

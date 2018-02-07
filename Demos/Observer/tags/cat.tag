@@ -11,10 +11,12 @@
 		this.data = "Nothing";
 		this.magicNum = 0;
 
+		var alphabet = ['alpha','bravo','charlie','delta','echo','foxtrot','golf','hotel','juliet','kilo','lima','mike','november','oscar','papa','quebec','romeo','sierra','tango','uniform','victor','whiskey','xray','yankee','zulu'];
+
 		talkToDog(event) {
-			var randomNum = Math.floor(Math.random()*1000);
+			var randomAlpha = Math.floor(Math.random() * alphabet.length);
 			var catMsg = "Go bark up another tree. ~From Cat";
-			observable.trigger('woof', catMsg, randomNum);
+			observable.trigger('woof', catMsg, alphabet[randomAlpha]);
 		}
 
 		observable.on('meow', function(passedData, someNum){
