@@ -1,7 +1,7 @@
 <pet-game>
-	<h1>Digipet</h1>
+	<h1>Digipet <span class={ playing:inPlay }>GAME</span></h1>
 
-	<img src="images/{ petImage }.png">
+	<img src="images/{ petImage }.png" style="background-image:url(images/{ backgroundImg });" ref="pet">
 
 	<div>
 		<div class="bar health">
@@ -21,7 +21,7 @@
 	<button onclick={ exercise } disabled={ petHealth <= 0 || !inPlay }>EXERCISE PET</button>
 	<button onclick={ reset } show={ petHealth <= 0 || !inPlay }>RESET</button>
 
-	<info-console logs={ logs }></info-console>
+	<info-console logs={ userLogs }></info-console>
 
 	<script>
 		var that = this;
@@ -32,21 +32,23 @@
 
 		this.inPlay = true;
 
-		this.petHealth = 85;
+		this.petHealth = 80;
 		this.petStrength = 0;
 
 		this.percentHealth = this.petHealth;
 		this.percentStrength = this.petStrength;
 
 		this.petImage = "pet-0";
+		this.backgroundImg = "";
 
-		this.logs = [];
+		this.userLogs = [];
 
 		reset(event) {
-			this.inPlay = false;
-			this.petHealth = 85;
+			this.petHealth = 80;
 			this.petStrength = 0;
-			this.logs = [];
+			this.backgroundImg = "";
+			this.userLogs = [];
+			this.inPlay = true;
 		}
 
 		feed(event) {
@@ -61,12 +63,12 @@
 		}
 
 		addToLog(msg) {
-			this.logs.push(msg);
+			this.userLogs.push(msg);
 		}
 
 		catAttacks() {
 			var randDecimal = Math.random();
-			return randDecimal < 0.30 ? true : false;
+			return randDecimal < 0.5 ? true : false;
 		}
 
 		catCombat() {
@@ -126,10 +128,11 @@
 			}
 		}
 
-		this.on('update', function() {
+		resolveOutcomes(event) {
 			if (this.inPlay) {
 				if (this.petHealth >= WINHEALTH) {
 					this.updatePetImage('win');
+					this.backgroundImg = "confetti.gif";
 					this.addToLog('You WIN! Cats don\'t bother you anymore.');
 					this.inPlay = false;
 				} else if (this.catAttacks()) {
@@ -139,10 +142,19 @@
 				}
 			} else {
 				this.updatePetImage();
-				this.inPlay = true;
 			}
 
 			this.setStatBars();
+		}
+
+		this.on('update', function() {
+
+			this.resolveOutcomes();
+
+			if (this.petHealth <= 0) {
+				this.inPlay = false;
+			}
+
 		});
 
 	</script>
@@ -178,6 +190,14 @@
 		}
 		.bar.strength > div {
 			background-color: gold;
+		}
+		h1 > span {
+			background-color: tomato;
+			padding: 0.5em;
+			border-radius: 0.25em;
+		}
+		.playing {
+			background-color: yellowgreen;
 		}
 	</style>
 </pet-game>
