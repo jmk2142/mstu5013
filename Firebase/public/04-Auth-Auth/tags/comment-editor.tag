@@ -9,7 +9,7 @@
 
 		var database = firebase.database();
 		// This reference is important - see database for architecture
-		var myCommentsRef = database.ref('comments/users/' + this.user.uid);
+		var myCommentsRef = database.ref('firebase/04-auth-auth/comments/users/' + this.user.uid);
 
 
 		saveComment(event) {

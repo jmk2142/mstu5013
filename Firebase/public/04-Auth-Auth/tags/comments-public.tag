@@ -9,7 +9,7 @@
 		this.publicComments = [];
 
 		var database = firebase.database();
-		var publicCommentsRef = database.ref('comments/public');
+		var publicCommentsRef = database.ref('firebase/04-auth-auth/comments/public');
 
 		publicCommentsRef.on('value', function(snapshot) {
 			var commentsData = snapshot.val();

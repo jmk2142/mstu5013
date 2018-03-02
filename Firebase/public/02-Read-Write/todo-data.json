@@ -1,0 +1,18 @@
+{
+	"02-read-write": {
+		"todoItems": {
+			"-L6Z0MW2CdQsu8MYgQ0a": {
+				"done": false,
+				"task": "Eat Breakfast"
+			},
+			"-L6Z0Nc6nZS57bfAFU-2": {
+				"done": false,
+				"task": "Goto Karate Class"
+			},
+			"-L6Z0PE2QscsbD8XUpe1": {
+				"done": false,
+				"task": "Walk the Cat"
+			}
+		}
+	}
+}

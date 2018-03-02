@@ -53,9 +53,9 @@
 
 		// Cached firebase refs for convenience
 		var database = firebase.database();
-		var studentsRef = database.ref('students');
-		var charsRef = studentsRef.child('characteristics');
-		var traitsRef = database.ref('traits');
+		var studentsRef = database.ref('firebase/03-query-index/students');
+		var charsRef = studentsRef.child('characteristics'); // ???
+		var traitsRef = database.ref('firebase/03-query-index/traits');
 
 		// STARTER nonsense data
 		this.data = {a:1,b:2,c:3};

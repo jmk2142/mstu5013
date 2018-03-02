@@ -47,7 +47,7 @@
 
 		// First thing we want to do is read the data on the tag load.
 		var database = firebase.database();
-		var todoItemsRef = database.ref('todoItems');
+		var todoItemsRef = database.ref('firebase/02-read-write/todoItems');
 
 		/*
 			Getting all todos with the 'value' event
@@ -139,7 +139,7 @@
 
 			console.log('this.todosData', this.todosData);
 
-			// HINT for removing on firebase
+			// HINT for removing on firebase - can you add the code to remove items?
 			// REFERENCE.remove();
 			// REFERENCE.set(null);
 		}

@@ -13,7 +13,7 @@
 		this.myComments = [];
 
 		var database = firebase.database();
-		var myCommentsRef = database.ref('comments/users/' + this.user.uid);
+		var myCommentsRef = database.ref('firebase/04-auth-auth/comments/users/' + this.user.uid);
 
 		myCommentsRef.on('value', function(snapshot) {
 			var commentsData = snapshot.val();
@@ -48,7 +48,7 @@
 			}
 
 			// One call to write to multiple locations
-			database.ref('comments').update(updates);
+			database.ref('firebase/04-auth-auth/comments').update(updates);
 		}
 
 		this.deleteComment = function(event) {
@@ -60,7 +60,7 @@
 			updates['public/' + comment.id] = null;
 			updates['users/' + this.user.uid + '/' + comment.id] = null;
 
-			database.ref('comments').update(updates);
+			database.ref('firebase/04-auth-auth/comments').update(updates);
 		};
 
 		// Dummy listener
