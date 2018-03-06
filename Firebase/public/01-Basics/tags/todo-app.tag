@@ -13,7 +13,7 @@
 			</div>
 
 			<div class="form-group">
-				<button class="btn btn-danger" disabled={ fakeData.filter(onlyDone).length == 0 } onclick={ removeItems }>
+				<button class="btn btn-danger" disabled={ !fakeData.filter(onlyDone).length } onclick={ removeItems }>
 					<i class="fa fa-trash"></i> { fakeData.filter(onlyDone).length }
 				</button>
 			</div>
