@@ -23,6 +23,8 @@ In this exercise that we started in class - we will be working on creating our o
 	- Think about how your database architecture will be reflected if we think of this problem as a read optimization issue. How can we structure the data on the database so that getting a particular users message is a simple fetch from a single reference? Instead of querying through all messages?
 6. Other considerations overall to make the experience better.
 7. (CHALLENGE) Using `js/utilities.js`, if there is an image or site link in the message - make the message provide the image or link in some way. (Doesn't have to be inline with the text message.)
+    - To do any inline inclusion of images and links (creating <img> and <a> elements on the fly see http://riotjs.com/guide/#render-unescaped-html)
+    - But not necessary to do some of this stuff.
 
 ## Your own features:
 1. Give the messages extra features that make it fun, and yours.
