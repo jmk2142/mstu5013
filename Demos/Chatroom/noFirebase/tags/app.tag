@@ -1,6 +1,7 @@
 <app>
 
-	<h1>Welcome to MSTU Chat!</h1>
+	<h1>Welcome to MSTU Chat! [without Firebase / just Riot]</h1>
+	<a href="../withFirebase">See Firebase Version</a><br><br>
 
 	<div class="chatLog" ref="chatLog">
 		<!-- Messages go here: -->

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>MSTU CHAT!</title>
+</head>
+<body>
+	<app></app>
+
+	<script src="tags/app.tag" type="riot/tag"></script>
+	<script src="tags/message.tag" type="riot/tag"></script>
+
+	<!-- I saved the libraries locally, so as not to hit the CDN fetch limit during testing. -->
+	<script src="js/riot+compiler.js"></script>
+	<script src="js/firebase.js"></script>
+	<!-- <script src="js/utilities.js"></script> -->
+
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyBEbOWvV5Fig3eNvWVWValUExl-_WBBxEo",
+	    authDomain: "mstu5013.firebaseapp.com",
+	    databaseURL: "https://mstu5013.firebaseio.com",
+	    projectId: "mstu5013",
+	    storageBucket: "mstu5013.appspot.com",
+	    messagingSenderId: "953045445181"
+	  };
+	  firebase.initializeApp(config);
+
+		// Global Cached -> Most useful Firebase refs accessible anywhere.
+		// HERE
+
+		// Initialize Riot
+		riot.mount('*');
+
+	</script>
+</body>
+</html>
