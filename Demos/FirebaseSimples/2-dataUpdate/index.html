@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Update Data</title>
+</head>
+<body>
+
+	<!-- Riot Mount Point -->
+	<app></app>
+
+	<!-- Riot TAGS -->
+	<script src="tags/app.tag" type="riot/tag"></script>
+	
+	<!-- Riot + Firebase IMPORT -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.8.1/riot+compiler.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyBEbOWvV5Fig3eNvWVWValUExl-_WBBxEo",
+	    authDomain: "mstu5013.firebaseapp.com",
+	    databaseURL: "https://mstu5013.firebaseio.com",
+	    projectId: "mstu5013",
+	    storageBucket: "mstu5013.appspot.com",
+	    messagingSenderId: "953045445181"
+	  };
+	  firebase.initializeApp(config);
+
+		// Firebase Cached References
+		var database = firebase.database();
+		var rootRef = database.ref('/');
+
+		// Initialize RiotJS
+		riot.mount('*');
+	</script>
+</body>
+</html>
