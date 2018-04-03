@@ -39,6 +39,11 @@
 			.limitToLast(num)
 
 			CHALLENGES:
+			0. Let's think of the data architecture of our zoo. What does an animal model represent?
+				- Does each model represent one animal?
+				- Does each model represent a type of animal?
+				- How does this change the model and architecture?
+
 			1. Change the animal model to have a variety of different datatype properties.
 			2. Create an interface to query certain animals.
 			3. Allow users to query and get in results, different animals.
