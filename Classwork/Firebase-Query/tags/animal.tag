@@ -3,7 +3,7 @@
 	<span>An Animal</span>
 
 	<script>
-		var that = this;
+		var tag = this;
 		console.log('animal.tag');
 	</script>
 

@@ -22,7 +22,7 @@
 	</ul>
 
 	<script>
-		var that = this;
+		var tag = this;
 
 		this.animals = [];
 
