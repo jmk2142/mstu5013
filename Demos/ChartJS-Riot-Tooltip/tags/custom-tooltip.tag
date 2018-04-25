@@ -2,6 +2,7 @@
 
 	<p>Color: { opts.tooltipData.xLabel }</p>
 	<p>Y Value: { opts.tooltipData.yLabel }</p>
+	<p>blah { opts.x }</p>
 	<button onclick={ doSomething }>Click</button>
 
 	<script>

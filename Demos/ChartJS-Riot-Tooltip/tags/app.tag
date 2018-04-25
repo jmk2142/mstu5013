@@ -3,38 +3,107 @@
 	<h1>CHART</h1>
 	<canvas ref="myChart" width="100%"></canvas>
 
-	<custom-tooltip ref="myTooltip" tooltip-data={ tooltipData }></custom-tooltip>
+	<input type="number" ref="score">
+	<select ref="dayOfWeek" onchange={ setDay }>
+		<option value="m">Monday</option>
+		<option value="t">Tuesday</option>
+	</select>
+	<button onclick={ setNumber }>Enter Number</button>
+
+	<custom-tooltip ref="myTooltip" tooltip-data={ tooltipData } x={"Jin"}></custom-tooltip>
 
 	<script>
 		var tag = this;
 		console.log('app.tag');
 		this.toolText = "This is my text.";
 		this.tooltipData = {};
+		this.day = 'm';
+
+		// Assume Monday
+		// this.day = 0;
+
+		setDay(e) {
+			this.day = this.refs.dayOfWeek.value;
+		}
+
+		// Assume this is what we get from FB
+		// this.fbData = [{
+		// 	score: 0,
+		// 	comment: "x"
+		// },{
+		// 	score: 1,
+		// 	comment: "x"
+		// },{
+		// 	score: 5,
+		// 	comment: "x"
+		// },{
+		// 	score: 10,
+		// 	comment: "x"
+		// },{
+		// 	score: 3,
+		// 	comment: "x"
+		// }];
+
+		scoresRef.on('value', function(snap){
+		  console.log(snap.val());
+			var data = Object.values(snap.val());
+
+			var justScores = data.map(function(obj){
+			  return obj.score;
+			});
+			console.log(data);
+			console.log(justScores);
+
+			tag.chart.data.datasets[0].data[0] = justScores[0];
+			tag.chart.data.datasets[0].data[1] = justScores[1];
+
+			tag.chart.update();
+		});
+
+
+		// this.justScores = this.fbData.map(function(obj){
+		//   return obj.score;
+		// });
+
+
+
+		setNumber(e) {
+			var score = this.refs.score.value;
+
+			console.log(this.chart.data.datasets);
+
+			scoresRef.child(this.day + '/score').set(score);
+
+			// this.chart.data.datasets[0].data[this.day] = score;
+			// this.chart.data.labels[0] = 'MONDAY';
+			//
+			// this.chart.update();
+		}
+
 
 		this.on('mount', function(){
 			var ctx = this.refs.myChart.getContext('2d');
 			this.chart = new Chart(ctx, {
 				type: 'bar',
 				data: {
-				    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+				    labels: ["M", "T", "W", "R", "F"],
 				    datasets: [{
 				        label: '# of Votes',
-				        data: [4,5,6,5,4,3,7],
+				        data: this.justScores,
+								lineTension: 0,
 				        backgroundColor: [
 				            'rgba(255, 99, 132, 0.2)',
 				            'rgba(54, 162, 235, 0.2)',
 				            'rgba(255, 206, 86, 0.2)',
 				            'rgba(75, 192, 192, 0.2)',
-				            'rgba(153, 102, 255, 0.2)',
-				            'rgba(255, 159, 64, 0.2)'
+				            'rgba(153, 102, 255, 0.2)'
 				        ],
 				        borderColor: [
 				            'rgba(255,99,132,1)',
 				            'rgba(54, 162, 235, 1)',
 				            'rgba(255, 206, 86, 1)',
 				            'rgba(75, 192, 192, 1)',
-				            'rgba(153, 102, 255, 1)',
-				            'rgba(255, 159, 64, 1)'
+				            'rgba(153, 102, 255, 1)'
 				        ],
 				        borderWidth: 1
 				    }]
