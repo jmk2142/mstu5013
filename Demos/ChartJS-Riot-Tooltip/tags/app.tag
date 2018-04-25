@@ -72,6 +72,8 @@
 						callbacks: {
 							// This seems to be the callback that is called when the mouse is hovering
 							// over a tooltip trigger area
+							// Note this is triggered on any mouse movement in the trigger area
+							// So it's fine for little dynamic things (like click stuff in the tooltip)... but if your tooltip riot tag is going to do something like a firebase query -... it's going to fire off a query many many times. So you need some control to only query if for example, the value has changed. etc.
 							label: function(tooltipItem, data) {
 							  console.log('TOOLTIPITEM:', tooltipItem);
 								console.log('DATA:', data)
