@@ -70,7 +70,7 @@
 				content: "Your adventure begins here...",
 				storyID: key,
 				id: sceneKey,
-				parentScene: '', // firstScene never has a parentScene
+				parentSceneID: '', // firstScene never has a parentScene
 				scenePrompts: {}
 			};
 

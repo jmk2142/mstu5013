@@ -12,11 +12,12 @@
 
 		<p hide={ scene.content }>No scene content...</p>
 
+		<p show={ scene.scenePrompts }><strong>CHOOSE BELOW:</strong></p>
 		<ol>
 			<li ref={ key } each={ prompt, key in scene.scenePrompts } onclick={ loadScene }>{ prompt }</li>
 		</ol>
 
-		<button onclick={ prevScene } show={ scene.parentScene }>BACK</button>
+		<button onclick={ prevScene } show={ scene.parentSceneID }>BACK</button>
 		<button onclick={ showEditor }>EDIT SCENE</button>
 	</div>
 
@@ -33,7 +34,7 @@
 
 		prevScene(e) {
 			console.log(this);
-			var key = this.scene.parentScene;
+			var key = this.scene.parentSceneID;
 			this.getScene(key);
 		}
 

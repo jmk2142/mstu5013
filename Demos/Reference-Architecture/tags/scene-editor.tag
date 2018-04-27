@@ -54,7 +54,7 @@
 						content: "",
 						storyID: this.scene.storyID,
 						id: key,
-						parentScene: this.scene.id,
+						parentSceneID: this.scene.id,
 						scenePrompts: {}
 					}
 				}
