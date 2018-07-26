@@ -1,6 +1,6 @@
 <animal>
 
-	<span>An Animal</span>
+	<span>{ animal.typeOfAnimal }</span>
 
 	<script>
 		var tag = this;

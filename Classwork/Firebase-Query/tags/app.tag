@@ -5,13 +5,13 @@
 	<div>
 		<input type="text" ref="animalName" placeholder="Enter animal">
 		<!-- <input type="text" ref=""> -->
-		<button type="button">SAVE</button>
+		<button type="button" onclick={ saveAnimal }>SAVE</button>
 	</div>
 
 	<!-- Animal QUERY -->
 	<div>
 		<input type="text" ref="animalQuery" placeholder="Enter query">
-		<button type="button">SEARCH</button>
+		<button type="button" onclick={ searchAnimal }>SEARCH</button>
 	</div>
 
 
@@ -23,8 +23,52 @@
 
 	<script>
 		var tag = this;
+		var animalsRef = rootRef.child('animals');
+		var animalsByAlphaRef = rootRef.child('animalsByAlpha');
 
 		this.animals = [];
+
+		animalsRef.once('value', function(snap){
+			var data = snap.val();
+
+			tag.animals = Object.values(data).sort(function(a,b){
+				return a.typeOfAnimal > b.typeOfAnimal;
+			});
+
+			tag.update();
+		});
+
+
+
+		searchAnimal(e) {
+			animalsRef.off();
+			animalsRef.on('value', function(snap){
+				alert('xomething');
+			  var data = snap.val();
+				console.log(data);
+
+				tag.animals = Object.values(data).sort(function(a,b){
+					return a.typeOfAnimal > b.typeOfAnimal;
+				});
+				console.log(tag.animals);
+
+				tag.update();
+			});
+		}
+
+		saveAnimal(e) {
+			var key = animalsRef.push().key;
+
+			var animal = {
+				id: key,
+				typeOfAnimal: this.refs.animalName.value.toLowerCase()
+			};
+
+			if (this.refs.animalName.value != "") {
+				rootRef.child('animals/' + key).set(animal);
+			}
+
+		}
 
 		/*****
 			ref.orderByChild('path').MODIFIERS.on('value', ...);
