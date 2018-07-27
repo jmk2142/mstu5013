@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>DigitalPet</title>
+</head>
+<body>
+	<!-- Tag Mount Point -->
+	<zoo></zoo>
+
+	<!-- Imports your .tag files from your tag folder. -->
+	<script src="./tags/zoo.tag" type="riot/tag"></script>
+	<script src="./tags/animal.tag" type="riot/tag"></script>
+
+	<!-- Load RiotJS and the COMPILER; Transforms tags into JS on load. -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.10.3/riot+compiler.js"></script>
+
+	<!-- Initialize tags -->
+	<script>
+	  riot.mount('*');
+	</script>
+</body>
+</html>
