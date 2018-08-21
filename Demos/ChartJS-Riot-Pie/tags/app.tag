@@ -79,6 +79,7 @@
 			var animal = this.zoo.pop();
 			updateChart(this.chartB, this.zoo);
 			updateChart(this.chartC, this.zoo);
+			
 			console.log("Removed: ", animal);
 			console.log("this.zoo: ", this.zoo);
 		}
@@ -93,6 +94,7 @@
 			this.zoo.push(animal);
 			updateChart(this.chartB, this.zoo);
 			updateChart(this.chartC, this.zoo);
+
 			console.log("Added: ", animal);
 			console.log("this.zoo: ", this.zoo);
 		}
