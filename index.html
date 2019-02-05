@@ -4,32 +4,50 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="styles.css">
 	<title>MSTU5013 Repository</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 <body>
-	<h1>MSTU5013 Code</h1>
-	<p>This repository is for code demonstrations for Theory and Programming of Interactive Media II (MSTU 5013).</p>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>MSTU5013 Code</h1>
+				<p>This repository is for code demonstrations for Theory and Programming of Interactive Media II (MSTU 5013).</p>
 
-	<h2>Course Content</h2>
-	<ol>
-		<li><a href="RiotJS">Riot JS Demos</a></li>
-		<li><a href="Firebase">Firebase Demos</a></li>
-	</ol>
+				<h2>Course Content</h2>
+				<ol>
+					<li><a href="RiotJS">Riot JS Demos</a></li>
+					<li><a href="Firebase">Firebase Demos</a></li>
+					<li><a href="Tinkers">Tinker Demos</a></li>
+				</ol>
 
-	<h2>How to Run Code</h2>
-	<p>For many of these demos, you cannot simply "open" them in the browser. The code we write needs access to your local resources through your browser. The browser will block this access as a security precaution.</p>
-	<p>Thus, we need to create our own web-server on our local computer which the browser will allow. A web-server is simply a program running in the background that will "serve" our pages (just like Columbia's web-server.)</p>
-	<p><strong>IMPORTANT</strong>: Note that if you don't view these demos through a local webserver, parts will certainly break. I recommend that you start your webserver with the <em>root</em> of this repository which will allow all sub-pages to be served.</p>
+				<h2>How to Run Code</h2>
+				<p><strong>For many of these demos, you cannot simply "open" them in the browser.</strong> The code we write needs access to your local resources through your browser. The browser will block this access as a security precaution.</p>
+				<p>Thus, we need to create our own web-server on our local computer which the browser will allow. A web-server is simply a program running in the background that will "serve" our pages (just like Columbia's web-server.)</p>
+				<p><strong>IMPORTANT</strong>: Note that if you don't view these demos through a local webserver, parts will certainly break. I recommend that you start your webserver with the <em>root</em> of this repository which will allow all sub-pages to be served.</p>
 
-	<h3>Local Web Server</h3>
-	<p>Http-Server is a small program that "serves" your HTML/CSS/JS pages much like what you're used to with your Columbia Webhosting services. It is a program that runs in a Javascript Environment (NodeJS) that we need to install on our systems. In order to do so, you'll want to do the following:</p>
+				<h3>Local Web Server: Atom Live Server</h3>
+				<p>The simplest way to get a web-server started to view the demos is to use <a href="https://atom.io/packages/atom-live-server">atom-live-server</a>.</p>
+				<ol>
+					<li>Install Package</li>
+					<li>Click to start</li>
+					<li>Save work in Atom to get refresh of new updates</li>
+				</ol>
 
-	<ol>
-		<li>Install <a href="https://nodejs.org/en/">NodeJS</a></li>
-		<li>In terminal, install <a href="https://www.npmjs.com/package/http-server">http-server</a></li>
-		<li>Run your <a href=""></a>local web-server</li>
-		<li>View your server at <strong>http://localhost:port</strong> where port is the port number of your server</li>
-		<li>You can find a nice <a href="https://www.youtube.com/watch?v=vnPemSnnJYY">Video Tutorial here</a>.</li>
-	</ol>
+				<h4>Alternative: http-server</h4>
+				<p>Http-Server is a small program that "serves" your HTML/CSS/JS pages much like what you're used to with your Columbia Webhosting services. It is a program that runs in a Javascript Environment (NodeJS) that we need to install on our systems. In order to do so, you'll want to do the following:</p>
+
+				<ol>
+					<li>Install <a href="https://nodejs.org/en/">NodeJS</a></li>
+					<li>In terminal, install <a href="https://www.npmjs.com/package/http-server">http-server</a></li>
+					<li>Run your <a href=""></a>local web-server</li>
+					<li>View your server at <strong>http://localhost:port</strong> where port is the port number of your server</li>
+					<li>You can find a nice <a href="https://www.youtube.com/watch?v=vnPemSnnJYY">Video Tutorial here</a>.</li>
+				</ol>
+
+			</div>
+		</div>
+	</div>
 
 </body>
 </html>
