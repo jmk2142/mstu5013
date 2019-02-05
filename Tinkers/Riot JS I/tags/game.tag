@@ -93,7 +93,7 @@
 
 			<!-- MAIN CONTENT: START -->
 			<div id="main" class="col-9">
-
+				
 				<!-- REVEAL TAG -->
 				<reveal if={ menuState == "partyReveal" } players={ players }></reveal>
 
