@@ -29,25 +29,32 @@
 
 	<h1>SECRET IDENTITIES!!!</h1>
 	<ol>
-		<li><strong>Open ONLY YOUR OWN identity card.</strong></li>
-		<li>Do not let anyone else see your secret identity.</li>
+		<li>REVEAL YOUR IDENTITY CARD.</li>
+		<li><strong>Do not let anyone else see your secret identity.</strong></li>
 		<li>Cards will be "sealed" after they are opened.</li>
 		<li>If your card is already sealed, someone opened it. You must restart the game.</li>
-		<li>Do not forget your identity. If you are confused, all player identities should be reset (do over.)</li>
+		<li>Do not forget your identity or the secret INTEL.</li>
+		<li>If you are confused, all player identities should be reset (do over.)</li>
 	</ol>
 
-	<div class="d-flex justify-content-around flex-wrap">
-		<player-card-secret each={ players }></player-card-secret>
+	<div class="d-flex justify-content-center flex-wrap">
+		<player-card-secret each={ players } in-review={ inReview }></player-card-secret>
 	</div>
 
   <script>
     // JAVASCRIPT
     let tag = this;
+		console.log(this);
 
 		this.players = this.opts.players;
 		this.numPlayers = this.opts.players.length;
 
-		// console.log('reveal', tag.opts);
+		this.inReview = false;
+
+		toggleInReview(beingReviewed) {
+			this.inReview = beingReviewed;
+			this.update();
+		}
 
   </script>
 

@@ -1,6 +1,6 @@
 <game>
-	<div class="container-fluid min-vh-100">
-		<div class="row min-vh-100">
+	<div class="container-fluid">
+		<div class="row">
 
 			<!-- SIDEBAR: START -->
 			<div id="side" class="col-3 min-vh-100">
@@ -8,7 +8,7 @@
 
 				<!-- INTRO -->
 				<div show={ menuState === "intro"} class="text-center">
-					<p><strong>{ yearsSince } years</strong> since the end of fascism.<br>Maybe.</p>
+					<p><strong>{ yearsSince } years</strong> since the end of fascism. Maybe.</p>
 					<button class="btn btn-light" onclick={ startNewGame }>New Game</button>
 				</div>
 
@@ -54,7 +54,6 @@
 							</div>
 					  </div>
 						<div class="card-footer">
-							<button class="btn btn-light" onclick={ resetGame }>RESET</button>
 							<button class="btn btn-success float-right" onclick={ customizeUsers }>CONFIRM</button>
 						</div>
 					</div>
@@ -77,12 +76,16 @@
 							</p>
 						</div>
 						<div class="card-footer">
-							<button class="btn btn-light" onclick={ resetGame }>RESET</button>
 							<button class="btn btn-light" onclick={ autoFill }>AUTO-FILL</button>
 							<button class="btn btn-success float-right" disabled={ !playersReady } onclick={ playGame }>NEXT</button>
 						</div>
 					</div>
 				</div>
+
+				<div class="form-group text-center mt-3">
+					<button hide={ menuState === "intro" } class="btn btn-light" onclick={ resetGame }>RESET</button>
+				</div>
+
 
 			<!-- SIDEBAR: END -->
 			</div>
@@ -117,25 +120,48 @@
 		this.playersReady = false;
 		this.readyCount = 0;
 
-		// TEST CODE
-		// startFAST() {
-		// 	this.menuState = "playerCustomize";
-		// 	this.playerCount = 10;
-		// 	this.playerTypes = getPlayerTypes(this.playerCount);
-		//
-		// 	this.players = [];
-		// 	let names = ["Alpha","Bravo","Charlie","Delta","Echo","Foxtrot","Golf","Hotel","Igloo","Juliet"];
-		// 	for (let i=0; i < this.playerCount; i++) {
-		// 		this.players.push({
-		// 			name: names[i],
-		// 			party: "",
-		// 			president: false,
-		// 			chancellor: false,
-		// 			hitler: false
-		// 		});
-		// 	}
-		// }
-		// this.startFAST();
+		/********************
+		TAG INSTANCE METHODS
+		********************/
+
+		startNewGame(event) {
+			this.menuState = "gameType";
+		}
+
+		startHotseat(event) {
+			this.online = false;
+			this.menuState = "playerCount";
+		}
+
+		/********************
+		EXAMPLE: The following this.startOnline function is the long-hand ver.
+		of writing functions in RIOT. We'll use the short-hand version going forward.
+
+		this.startOnline = function(event) {
+			this.online = true;
+			this.menuState = "playerCount";
+		}
+		********************/
+
+		setNumPlayers(event) {
+			this.playerCount = Number(event.target.value);
+			this.playerTypes = getPlayerTypes(this.playerCount);
+
+			this.players = [];
+			for (let i=0; i < this.playerCount; i++) {
+				this.players.push({
+					name: "",
+					party: "",
+					president: false,
+					chancellor: false,
+					hitler: false
+				});
+			}
+		}
+
+		resetGame(event) {
+			this.menuState = "intro";
+		}
 
 		setName(event) {
 			event.item.user.name = event.target.value.trim();
@@ -173,51 +199,20 @@
 			this.players[randIndex].president = true;
 		}
 
-
-		startNewGame(event) {
-			this.menuState = "gameType";
-		}
-
-
 		updateReadyCount() {
 			this.readyCount = this.players.filter(player => player.name).length;
-		}
-
-		startHotseat(event) {
-			this.online = false;
-			this.menuState = "playerCount";
-		}
-
-		// Same as above, but we'll use above short-hand version going forward.
-		// this.startOnline = function(event) {
-		// 	this.online = true;
-		//	this.menuState = "playerCount";
-		// }
-
-		setNumPlayers(event) {
-			this.playerCount = Number(event.target.value);
-			this.playerTypes = getPlayerTypes(this.playerCount);
-
-			this.players = [];
-			for (let i=0; i < this.playerCount; i++) {
-				this.players.push({
-					name: "",
-					party: "",
-					president: false,
-					chancellor: false,
-					hitler: false
-				});
-			}
 		}
 
 		customizeUsers(event) {
 			this.menuState = "playerCustomize";
 		}
 
-		resetGame(event) {
-			this.menuState = "intro";
-		}
 
+		/********************
+		HELPER FUNCTIONS
+		********************/
+
+		// This function is solely for filling in Player Names while testing to decrease time spent typing.
 		autoFill(event) {
 			const autoNames = ["Aardvark","Bronco","Chipmunk","Dragon","Elephant","Fox","Giraffe","Horse","Iguana","Jackal"];
 						shuffle(autoNames);
@@ -230,7 +225,7 @@
 			this.playersReady = !(this.readyCount < this.playerCount);
 		}
 
-		// Creating a static function that returns playerType count object
+		// This function takes number of players and returns the correct distribution of roles based on game size.
 		function getPlayerTypes(numPlayers) {
 			let playerTypes;
 
@@ -262,17 +257,11 @@
 	    return list;
 		}
 
-		this.on('update', () => {
-			// console.log(this);
-		});
-
   </script>
 
   <style>
     /* CSS */
-		:scope {
-			display: block;
-		}
+
 		#side {
 			background-color: #ff593f;
 		}
@@ -295,17 +284,5 @@
 			font-weight: bold;
 			font-size: 2em;
 		}
-
-		/*
-			bg-orange: #ffb758
-			box-red: #ff593f
-			box-pink: #ffaa8b
-			box-beige: #ffdfbc
-			box-dark: #434243
-		*/
   </style>
 </game>
-
-<!--
-https://secrethitler.tartanllama.xyz/
--->
