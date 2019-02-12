@@ -23,13 +23,13 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<card-module></card-module>
+				<card-component title={"Honeybee"} card-content={"Bzzz."}>
 			</div>
 			<div class="col">
-				<card-module></card-module>
+				<card-component title={"Bluejay"} card-content={"Chirp."}>
 			</div>
 			<div class="col">
-				<card-module></card-module>
+				<card-component title={"Crocodile"} card-content={"Snap!"}>
 			</div>
 		</div>
 	</div>
