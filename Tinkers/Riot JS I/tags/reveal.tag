@@ -44,6 +44,7 @@
   <script>
     // JAVASCRIPT
     let tag = this;
+		console.log(this);
 
 		this.players = this.opts.players;
 		this.numPlayers = this.opts.players.length;
