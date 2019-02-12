@@ -68,7 +68,7 @@
 						<div class="card-body">
 
 							<div class="form-group" each={ user, i in players }>
-								<input class="form-control" placeholder="Player {i+1} Name" oninput={ parent.setName }>
+								<input class="form-control" placeholder="Player {i+1} Name" oninput={ parent.setName } value={ user.name || "" }>
 							</div>
 							<p class="text-right">
 								<span class="float-left">{ playersReady ? "Ready" : "Waiting..."}</span>
@@ -77,13 +77,20 @@
 						</div>
 						<div class="card-footer">
 							<button class="btn btn-light" onclick={ autoFill }>AUTO-FILL</button>
-							<button class="btn btn-success float-right" disabled={ !playersReady } onclick={ playGame }>NEXT</button>
+							<button class="btn btn-success float-right" disabled={ !playersReady } onclick={ revealIdentities }>NEXT</button>
 						</div>
 					</div>
 				</div>
 
-				<div class="form-group text-center mt-3">
-					<button hide={ menuState === "intro" } class="btn btn-light" onclick={ resetGame }>RESET</button>
+				<!-- GOVERNMENT STATUS -->
+				<government if={ playing }></government>
+
+				<!-- Panel for Player Stats and Actions -->
+				<players-panel if={ playing } players={ players }></players-panel>
+
+				<!-- Commands Available Always -->
+				<div class="form-group text-center mt-3" hide={ menuState === "intro" } >
+					<button class="btn btn-light" onclick={ resetGame }>RESET</button>
 				</div>
 
 
@@ -95,7 +102,10 @@
 			<div id="main" class="col-9">
 
 				<!-- REVEAL TAG -->
-				<reveal if={ menuState == "partyReveal" } players={ players }></reveal>
+				<reveal if={ menuState == "partyReveal" && !playing } players={ players }></reveal>
+
+				<!-- GAME BOARDS -->
+				<game-board if={ playing } game-data={ gameData }></game-board>
 
 			<!-- MAIN CONTENT: END -->
 			</div>
@@ -113,6 +123,7 @@
 
 		this.menuState = "intro";	// intro, gameType, playerCount, playerCustomize
 
+		this.playing = false;
 		this.online = false;
 		this.players = [];
 		this.playerCount = 5;
@@ -146,17 +157,23 @@
 		setNumPlayers(event) {
 			this.playerCount = Number(event.target.value);
 			this.playerTypes = getPlayerTypes(this.playerCount);
+			this.players = createPlayers(this.playerCount);
+		}
 
-			this.players = [];
-			for (let i=0; i < this.playerCount; i++) {
-				this.players.push({
+		function createPlayers(playerCount) {
+			let players = [];
+			for (let i=0; i < playerCount; i++) {
+				players.push({
 					name: "",
 					party: "",
 					president: false,
 					chancellor: false,
-					hitler: false
+					hitler: false,
+					ready: false,
+					termLimited: false
 				});
 			}
+			return players;
 		}
 
 		resetGame(event) {
@@ -169,9 +186,8 @@
 			this.playersReady = !(this.readyCount < this.playerCount);
 		}
 
-		playGame(event) {
+		revealIdentities(event) {
 			this.assignPlayerRoles();
-			// alert("GAME READY: Let's PLAY");
 			this.menuState = "partyReveal";
 		}
 
@@ -207,6 +223,14 @@
 			this.menuState = "playerCustomize";
 		}
 
+		playGame() {
+			this.playing = true;
+			this.gameData = {
+				players: this.players,
+				shuffle: shuffle
+			};
+			this.update();
+		}
 
 		/********************
 		HELPER FUNCTIONS
@@ -256,6 +280,26 @@
 	    }
 	    return list;
 		}
+
+		/********************
+		DEVELOPER PUSH --- Code to push state of game to where I want to test.
+		Comment OUT to start from beginning
+		********************/
+		(function() {
+			console.log('game.tag', this);
+
+			let playerCount = 10;
+			this.playerTypes = getPlayerTypes(playerCount);
+			this.players = createPlayers(playerCount);
+
+			const autoNames = ["Aardvark","Bronco","Chipmunk","Dragon","Elephant","Fox","Giraffe","Horse","Iguana","Jackal"];
+			for (let i=0; i < this.players.length; i++) {
+				this.players[i].name = autoNames[i];
+			}
+			this.playersReady = true;
+			this.assignPlayerRoles();
+			this.playGame();
+		}.bind(this))();
 
   </script>
 

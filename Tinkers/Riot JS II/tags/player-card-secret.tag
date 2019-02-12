@@ -66,6 +66,10 @@
 			event.preventUpdate = true;
 			this.reveal = true;
 			this.seen = true;
+
+			let player = event.item;
+			player.ready = true;
+
 			this.parent.toggleInReview(true);
 		}
 		hideIdentity(event) {

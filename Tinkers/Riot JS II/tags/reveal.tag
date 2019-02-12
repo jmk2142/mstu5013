@@ -44,7 +44,6 @@
   <script>
     // JAVASCRIPT
     let tag = this;
-		console.log(this);
 
 		this.players = this.opts.players;
 		this.numPlayers = this.opts.players.length;
@@ -53,7 +52,16 @@
 
 		toggleInReview(beingReviewed) {
 			this.inReview = beingReviewed;
-			this.update();
+
+			if (!this.inReview && this.players
+					.map(player => player.ready)
+					.every(ready => ready)
+			) {
+				this.parent.playGame();
+			} else {
+				this.update();
+			}
+
 		}
 
   </script>
