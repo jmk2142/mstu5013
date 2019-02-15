@@ -48,7 +48,7 @@
 					<pre>receipt.tag: <code ref="json"></code></pre>
 				</div>
 				<div class="card-footer">
-					
+
 				</div>
 			</div>
 		</div>
@@ -59,20 +59,8 @@
   <script>
     // JAVASCRIPT
     let tag = this;
+
 		const NYCTAX = 0.085;
-
-		this.name = opts.breakfast.fullName;
-		this.main = opts.breakfast.mainDish;
-		this.sides = opts.breakfast.sides;
-		this.drink = opts.breakfast.drink;
-		this.servings = opts.breakfast.servings;
-		this.time = opts.breakfast.time;
-
-		this.foodItems = [
-			opts.breakfast.mainDish,
-			...opts.breakfast.sides,
-			opts.breakfast.drink
-		];
 
 		this.priceLookup = {
 			pancakes: 7.00,
@@ -85,10 +73,21 @@
 			tea: 2.50
 		};
 
+		this.name = opts.breakfast.fullName;
+		this.servings = opts.breakfast.servings;
+		this.time = opts.breakfast.time;
+
+		this.foodItems = [
+			opts.breakfast.mainDish,
+			...opts.breakfast.sides,
+			opts.breakfast.drink
+		];
+
 		this.subTotal = this.foodItems
 			.map( food => this.priceLookup[food] )
 			.reduce( (accumulator, currentValue) => accumulator + currentValue)
 			* this.servings;
+
 		this.tax = this.subTotal * NYCTAX;
 		this.total = this.subTotal + this.tax;
 
@@ -99,6 +98,7 @@
 		this.on('mount', () => {
 			this.refs.json.textContent = JSON.stringify(this, null, 2);
 		});
+
   </script>
 
   <style>
