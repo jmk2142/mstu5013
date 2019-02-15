@@ -101,10 +101,14 @@
 	<div class="card">
 		<div class="card-header">MISCELLANEOUS</div>
 		<div class="card-body">
-			MISCELLANEOUS tests.
+			<pre>game-board.tag: <code ref="tagJSON" class="language-json">{ tagObjectJSON }</code></pre>
+			<strong>miscellaneousCount:</strong> <span class="badge badge-primary">{ miscellaneousCount }</span>
 		</div>
 		<div class="card-footer">
 			<button class="btn btn-secondary" type="button" onclick={ print }>PRINT THIS</button>
+			<button class="btn btn-secondary" type="button" onclick={ incrementCount }>COUNT++</button>
+			<button class="btn btn-secondary" type="button" onclick={ decrementCount }>COUNT--</button>
+			<button class="btn btn-secondary" type="button" onclick={ updateTag }>UPDATE TAG</button>
 		</div>
 	</div>
 
@@ -237,8 +241,31 @@
 			}
 		}
 
+
+		/********************
+		MISCELLANEOUS
+		********************/
+		this.tagObjectJSON = "JSON";
 		print(event) {
-			console.log(this);
+			event.preventUpdate = true;
+			this.tagObjectJSON = JSON.stringify(this, null, 2);
+			this.update();
+			Prism.highlightElement(this.refs.tagJSON);
+		}
+
+		this.miscellaneousCount = 0;
+		incrementCount(event) {
+			event.preventUpdate = true;
+			this.miscellaneousCount++;
+			console.log(this.miscellaneousCount);
+		}
+		decrementCount(event) {
+			this.miscellaneousCount--;
+			console.log(this.miscellaneousCount);
+		}
+
+		updateTag() {
+			this.update();
 		}
 
 		// UNIMPLEMENTED FUNCTIONS
