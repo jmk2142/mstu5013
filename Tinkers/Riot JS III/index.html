@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Secret Hitler: Riot JS</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link rel="stylesheet" href="./css/prism.css">
+		<link rel="stylesheet" href="./css/styles.css">
+  </head>
+  <body>
+
+    <!-- MOUNT POINT -->
+    <game></game>
+
+    <!-- TAGS -->
+    <script src="./tags/game.tag" type="riot/tag"></script>
+		<script src="./tags/reveal.tag" type="riot/tag"></script>
+		<script src="./tags/player-card-secret.tag" type="riot/tag"></script>
+		<script src="./tags/game-board.tag" type="riot/tag"></script>
+
+		<script src="./tags/players-panel.tag" type="riot/tag"></script>
+		<script src="./tags/chancellor-select.tag" type="riot/tag"></script>
+		<script src="./tags/government-vote.tag" type="riot/tag"></script>
+
+
+		<!-- <script src="./tags/government.tag" type="riot/tag"></script>
+		<script src="./tags/players-panel.tag" type="riot/tag"></script> -->
+
+    <!-- LOAD JQuery, Bootstrap, Riot, Firebase -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.13.2/riot+compiler.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+		<script src="./libs/prism.js" data-manual></script>
+
+    <script>
+      // INITIALIZE RIOT
+      riot.mount('*');
+
+			let observer = riot.observable();
+    </script>
+
+  </body>
+</html>
