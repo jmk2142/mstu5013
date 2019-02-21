@@ -28,10 +28,20 @@
 		<div class="card-body">
 			<chancellor-select if={ mode === "chancellor-select" } players={ players }></chancellor-select>
 			<government-vote if={ mode === "government-vote" } players={ players }></government-vote>
+			<div if={ mode === "default" } >
+				<p>Players are doing other things.</p>
+				<p>Press Start Election to rerun cycle.</p>
+			</div>
 		</div>
 		<div class="card-footer">
-			<button class="btn btn-dark" onclick={ toggleMode }>TOGGLE</button>
-			<button class="btn btn-dark" onclick={ nominatePresident }>START ELECTION</button>
+			<div show={ mode === "chancellor-select" }>
+				<strong>{ nameOfPres }</strong>, nominate a Chancellor.
+			</div>
+			<div show={ mode === "government-vote" }>
+				<em>Everyone</em> please vote.
+			</div>
+			<!-- <button class="btn btn-dark" onclick={ toggleMode }>TOGGLE</button> -->
+			<button show={ mode === "default" } class="btn btn-dark" onclick={ nominatePresident }>START ELECTION</button>
 		</div>
 	</div>
 
@@ -54,11 +64,11 @@
 		this.nameOfChan = "Please Select";
 
 		// Shifts president-nominee to next, sets stage for chancellor selection.
-		nominatePresident() {
+		nominatePresident(failedNominee) {
 			this.nameOfChan = "Please Select";
 
 			// SET first PRESIDENT Nominee
-			if (!this.president) { // FIRST ROUND
+			if (!this.president && !failedNominee) { // FIRST ROUND
 				let randIndex = Math.floor(Math.random() * numPlayers);
 				this.lastElectedIndex = randIndex;
 				this.nomineePres = this.players[randIndex];
@@ -86,18 +96,13 @@
 			// Move to next mode...
 
 			this.mode = "chancellor-select";
-			console.log(this.players);
 		}
 
-		this.nominatePresident();
+		this.nominatePresident(); // STARTS the first election round...
 
-		toggleMode() {
-			if (this.mode === "chancellor-select") {
-				this.mode = "government-vote";
-			} else {
-				this.mode = "chancellor-select";
-			}
-		}
+
+
+
 
 		// OBSERVER Listners
 		observer.on('chancellor:nominated', (player) => {
@@ -109,6 +114,8 @@
 		});
 
 		observer.on('vote:completed', (electionSuccess) => {
+
+			// ---------- ELECTION SUCCESSFUL
 			if (electionSuccess) {
 				// Exiting president and chancellor
 				if (this.president && this.chancellor) {
@@ -130,16 +137,45 @@
 				this.failCount = 0;
 
 				this.mode = "default";
+
+			// ---------- ELECTION UNSUCCESSFUL
 			} else {
-				this.nominatePresident();
+
+				this.nomineePres.nominated = false;
+				this.nomineeChan.nominated = false;
+
 				this.failCount++;
+
+				if (this.failCount < 3) { // Society okay...
+					this.nominatePresident(this.nomineePres);
+				} else { // Societal upheaval!!!
+					alert('ELECTION FAILED > THREE TIMES!');
+
+					/********************
+					If the group rejects three
+					governments in a row, the country is thrown into
+					chaos. Immediately reveal the Policy on top of
+					the Policy deck and enact it. Any power granted
+					by this Policy is ignored, but the Election
+					Tracker resets, and existing term-limits are
+					forgotten. All players become eligible to hold
+					the office of Chancellor for the next Election.
+					If there are fewer than three tiles remaining in
+					the Policy deck at this point, shuffle them with
+					the Discard pile to create a new Policy deck.
+					********************/
+
+					// Draw and enact next policy
+					// Ignore any power granted
+					// Reset failCount
+					// Reset all termLimits
+					// Shuffle if less than three cards left in policy deck
+
+					observer.trigger('government:chaos');
+
+				}
 			}
 
-			if (this.failCount < 3) { // Society okay...
-				alert('CONTINUE GAME');
-			} else { // Societal upheaval!!!
-				alert('ELECTION FAILED > THREE TIMES!');
-			}
 			this.update();
 		});
 

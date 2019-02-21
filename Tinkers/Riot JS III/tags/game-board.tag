@@ -257,16 +257,27 @@
 		incrementCount(event) {
 			event.preventUpdate = true;
 			this.miscellaneousCount++;
-			console.log(this.miscellaneousCount);
 		}
 		decrementCount(event) {
 			this.miscellaneousCount--;
-			console.log(this.miscellaneousCount);
 		}
 
 		updateTag() {
 			this.update();
 		}
+
+		/********************
+		Observer Listeners
+		********************/
+		observer.on('government:chaos', () => {
+			let policy = this.policyDrawDeck.splice(0, 1)[0];
+			if (policy === "fascist") {
+				// What now?
+			} else {
+				// What now?
+			}
+		});
+
 
 		// UNIMPLEMENTED FUNCTIONS
 		setPresident() {

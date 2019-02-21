@@ -27,7 +27,6 @@
 		}
 		getResults(vote) {
 			this.votes.push(vote);
-			console.log(this.votes);
 
 			if (this.votes.length === this.players.length) {
 				let yesVotes = this.votes.filter(vote => vote == "yes").length;

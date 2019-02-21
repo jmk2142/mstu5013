@@ -1,7 +1,9 @@
 <chancellor-select>
   <!-- HTML -->
 	<div class="player-row d-flex justify-content-between" each={ player, i in candidates }>
-		<span>{ player.name }</span> <button class="btn btn-sm btn-secondary" onclick={ selectChancellor }>Select</button>
+		<span>{ player.name }</span>
+		<button hide={ player.termLimited } class="btn btn-sm btn-secondary" onclick={ selectChancellor }>Select</button>
+		<span show={player.termLimited }><em>Term Limited</em></span>
 	</div>
 
   <script>
