@@ -108,7 +108,7 @@
 			<button class="btn btn-secondary" type="button" onclick={ print }>PRINT THIS</button>
 			<button class="btn btn-secondary" type="button" onclick={ incrementCount }>COUNT++</button>
 			<button class="btn btn-secondary" type="button" onclick={ decrementCount }>COUNT--</button>
-			<button class="btn btn-secondary" type="button" onclick={ updateTag }>UPDATE TAG</button>
+			<button class="btn btn-secondary" type="button" onclick={ update }>UPDATE TAG</button>
 		</div>
 	</div>
 
@@ -262,10 +262,6 @@
 			this.miscellaneousCount--;
 		}
 
-		updateTag() {
-			this.update();
-		}
-
 		/********************
 		Observer Listeners
 		********************/
@@ -277,12 +273,6 @@
 				// What now?
 			}
 		});
-
-
-		// UNIMPLEMENTED FUNCTIONS
-		setPresident() {
-			let president = this.players.find(player => player.president);
-		}
 
   </script>
 

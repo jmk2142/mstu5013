@@ -51,9 +51,7 @@
 		let numPlayers = opts.players.length;
 		this.players = opts.players;
 
-		this.nomination = true;
 		this.failCount = 0;
-
 		this.mode = "chancellor-select";
 
 		this.nomineePres;
@@ -104,7 +102,7 @@
 
 
 
-		// OBSERVER Listners
+		// OBSERVER Listeners
 		observer.on('chancellor:nominated', (player) => {
 			this.nomineeChan = player;
 			this.nameOfChan = player.name;
