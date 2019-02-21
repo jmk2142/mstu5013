@@ -1,14 +1,3 @@
-# Secret Hitler: Pre-game Setup
+# Tinker: Riot JS I - Overview and Syntax
 
-## Other Notes
-
-- [Strategy Guide](https://secrethitler.tartanllama.xyz/)
-
-Color Scheme
-- bg-orange: #ffb758
-- box-red: #ff593f
-- box-pink: #ffaa8b
-- box-beige: #ffdfbc
-- box-dark: #434243
-
-Other...
+See [HackMD](https://hackmd.io/s/SyUomGC7N)

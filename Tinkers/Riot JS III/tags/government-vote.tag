@@ -12,7 +12,6 @@
     // JAVASCRIPT
     let tag = this;
 		this.players = opts.players;
-		// this.eligible = this.players.filter(player => !player.termLimited);
 		this.votes = [];
 
 		voteYes(event) {
