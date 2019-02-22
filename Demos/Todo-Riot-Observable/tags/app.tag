@@ -32,7 +32,7 @@
 			this.update();
 		});
 
-		observer.on('todo:remove', (todoItems) => {
+		observer.on('todo:remove', () => {
 			this.todos = this.todos.filter(todoItem => !todoItem.done);
 			this.update();
 		});

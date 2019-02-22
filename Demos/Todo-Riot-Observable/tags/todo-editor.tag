@@ -33,7 +33,7 @@
 			return todos.filter(todo => todo.done).length;
 		}
 
-		observer.on('todo:removeQueued', (todo) => {
+		observer.on('todo:removeQueued', () => {
 			this.doneTodos = getDoneCount(opts.todos);
 			this.update();
 		});

@@ -11,7 +11,7 @@
 
 		toggle(event) {
 			this.todo.done = !this.todo.done;
-			observer.trigger('todo:removeQueued', this.todo);
+			observer.trigger('todo:removeQueued');
 		}
 
   </script>
