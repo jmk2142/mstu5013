@@ -228,7 +228,7 @@
 			const autoNames = ["Aardvark","Bronco","Chipmunk","Dragon","Elephant","Fox","Giraffe","Horse","Iguana","Jackal"];
 						shuffle(autoNames);
 			let inputs = [...this.root.querySelectorAll('input')];
-			inputs.map((el, i) => {
+			inputs.forEach((el, i) => {
 				el.value = autoNames[i];
 				tag.players[i].name = autoNames[i];
 			});
