@@ -39,7 +39,7 @@
 		removeAllDone(e) {
 			this.items = this.items.filter(function (item) {
 				return !item.done;
-			})
+			});
 		}
 
 		// an two example how to filter items on the list
