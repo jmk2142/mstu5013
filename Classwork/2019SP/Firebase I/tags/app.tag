@@ -30,6 +30,13 @@
 
 		add(event) {
 			if (this.text) {
+
+				// Simple write of document to collection
+				database.collection('todos').add({
+					title: this.text,
+					done: false
+				});
+
 				this.items.push({title: this.text});
 				this.text = this.refs.input.value = '';
 			}
