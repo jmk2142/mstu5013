@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TODO LIST</title>
+		<link rel="stylesheet" href="./styles/styles.css">
+  </head>
+  <body>
+
+    <!-- MOUNT POINT -->
+    <app></app>
+
+    <!-- TAGS -->
+    <script src="./tags/app.tag" type="riot/tag"></script>
+
+    <!-- LOAD Riot, Firebase -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.13.2/riot+compiler.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+
+    <script>
+      // INITIALIZE FIREBASE
+	    var config = {
+	      apiKey: "YOUR API KEY",
+	      authDomain: "YOUR PROJECT ID.firebaseapp.com",
+	      databaseURL: "https://YOUR PROJECT ID.firebaseio.com",
+	      projectId: "YOUR PROJECT ID",
+	      storageBucket: "YOUR PROJECT ID.appspot.com",
+	      messagingSenderId: "YOUR MESSAGINGSENDER ID"
+	    };
+      firebase.initializeApp(config);
+
+      // INITIALIZE RIOT
+			riot.mount('app', {
+	      title: 'I want to behave!',
+	      items: [
+	        { title: 'Avoid excessive caffeine', done: true },
+	        { title: 'Hidden item',  hidden: true },
+	        { title: 'Be less provocative'  },
+	        { title: 'Be nice to people' }
+	      ]
+	    })
+    </script>
+
+  </body>
+</html>
