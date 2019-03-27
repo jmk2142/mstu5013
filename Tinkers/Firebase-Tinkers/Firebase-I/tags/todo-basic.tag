@@ -93,10 +93,12 @@
 			database.collection('todos').get().then(snapshot => {
 				console.log('Collection successfully fetched.');
 
-				this.items = snapshot.docs.map(doc => {
-					let dataWithID = doc.data();
-							dataWithID.id = doc.id;
-					return dataWithID
+				this.items = [];
+
+				snapshot.forEach(doc => {
+					let todo = doc.data();
+							todo.id = doc.id;
+					this.items.push(todo);
 				});
 
 				this.update();
