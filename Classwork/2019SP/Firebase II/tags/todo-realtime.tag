@@ -41,7 +41,8 @@
 				collectionRef.doc(id).set({
 					title: this.text,
 					done: false,
-					id: id
+					id: id,
+					timestamp: firebase.firestore.FieldValue.serverTimestamp()
 				});
 
 				this.text = this.refs.input.value = '';
@@ -61,6 +62,9 @@
 		toggle(event) {
 			let item = event.item.todo;
 			item.done = !item.done;
+			database.collection('todos-live').doc(item.id).update({
+				done: item.done
+			});
 			return true;
 		}
 
@@ -80,7 +84,7 @@
 
 		this.on('mount', () => {
 			// DATABASE READ LIVE
-			stopListening = database.collection('todos-live').onSnapshot(snapshot => {
+			stopListening = database.collection('todos-live').orderBy('timestamp', 'desc').onSnapshot(snapshot => {
 				this.items = snapshot.docs.map(doc => doc.data());
 				this.update();
 			});

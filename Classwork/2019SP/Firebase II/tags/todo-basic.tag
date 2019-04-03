@@ -20,6 +20,8 @@
 		</button>
 	</form>
 
+	<button type="button" onclick={ nextPage }>NEXT PAGE</button>
+
 	<!-- this script tag is optional -->
 	<script>
 		this.title = opts.title || "DEFAULT TITLE";
@@ -81,6 +83,21 @@
 			return true;
 		}
 
+		nextPage() {
+			console.log(this.lastTimestamp);
+
+			database.collection('todos').orderBy('timestamp','asc')
+			.startAfter(this.lastTimestamp).limit(5).get().then(snapshot => {
+				this.items = [];
+				snapshot.forEach(doc => {
+					this.items.push(doc.data());
+				});
+
+				this.lastTimestamp = this.items[this.items.length - 1].timestamp;
+				this.update();
+			});
+		}
+
 		// FILTER FUNCTIONS ----------------------------------------
 
 		whatShow(item) {
@@ -98,20 +115,27 @@
 			// DATABASE READ
 			// .orderBy(prop, 'asc/desc')
 			// .where('prop', '< <= == > >= array_contains', 'value')
+			// .where('title', '>=', 'cam').where('title', '<', 'can')
 			// .limit(number)
 			// How would you get all words like camel, camera, camp?
-			database.collection('todos').get().then(snapshot => {
-				console.log('Collection successfully fetched.');
 
-				this.items = [];
+			// https://firebase.google.com/docs/firestore/query-data/query-cursorss
+			database.collection('todos')
+				.orderBy('timestamp','asc').limit(3).get().then(snapshot => {
+					console.log('Collection successfully fetched.');
 
-				snapshot.forEach(doc => {
-					let todo = doc.data();
-							todo.id = doc.id;
-					this.items.push(todo);
-				});
+					this.items = [];
 
-				this.update();
+					snapshot.forEach(doc => {
+						let todo = doc.data();
+								todo.id = doc.id;
+						this.items.push(todo);
+					});
+
+					this.lastTimestamp = this.items[this.items.length - 1].timestamp;
+					console.log(this.items);
+
+					this.update();
 			});
 		});
 	</script>
