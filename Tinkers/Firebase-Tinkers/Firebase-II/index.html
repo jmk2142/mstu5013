@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>TITLE</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./styles/styles.css">
+  </head>
+  <body>
+
+    <!-- MOUNT POINT -->
+    <app></app>
+
+    <!-- TAGS -->
+    <script src="./tags/app.tag" type="riot/tag"></script>
+		<script src="./tags/kitchen-lab-editor.tag" type="riot/tag"></script>
+		<script src="./tags/kitchen-lab-browse.tag" type="riot/tag"></script>
+		<script src="./tags/kitchen-lab-room.tag" type="riot/tag"></script>
+
+    <!-- LOAD JQuery, Bootstrap, Riot, Firebase -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.13.2/riot+compiler.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+
+    <script>
+      // INITIALIZE FIREBASE
+	    var config = {
+	      apiKey: "YOUR API KEY",
+	      authDomain: "YOUR PROJECT ID.firebaseapp.com",
+	      databaseURL: "https://YOUR PROJECT ID.firebaseio.com",
+	      projectId: "YOUR PROJECT ID",
+	      storageBucket: "YOUR PROJECT ID.appspot.com",
+	      messagingSenderId: "YOUR MESSAGINGSENDER ID"
+	    };
+      firebase.initializeApp(config);
+			let database = firebase.firestore();
+
+      // INITIALIZE RIOT
+      riot.mount('*');
+    </script>
+
+  </body>
+</html>

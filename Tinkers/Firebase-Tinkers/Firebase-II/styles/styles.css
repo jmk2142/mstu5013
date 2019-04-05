@@ -1,0 +1,35 @@
+html, body {
+	font-family: Helvetica;
+	margin: 1em;
+}
+
+input {
+	padding: 0.5em;
+	border-radius: 0.25em;
+}
+
+button {
+	padding: 0.5em;
+	border-radius: 0.25em;
+}
+
+select, option {
+	height: 2.60em;
+	vertical-align: bottom;
+}
+
+input[type="checkbox"], label > span {
+	padding: 0em;
+	vertical-align: middle;
+}
+
+.badge {
+	border: 1px solid grey;
+	padding: 0.25em;
+	border-radius: 0.25em;
+	margin-right: 0.5em;
+}
+
+textarea {
+	padding: 0.5em;
+}
