@@ -160,14 +160,6 @@
 			}
 		});
 
-		this.on('mount', () => {
-			database.collection('things').get().then(snapshot => {
-				snapshot.forEach(doc => {
-					console.log(doc.data());
-				});
-			});
-		});
-
   </script>
 
   <style>
