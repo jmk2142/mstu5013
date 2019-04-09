@@ -4,8 +4,18 @@
   <div class="container">
   	<div class="row">
   		<div class="col">
-				<div show={ room }>
+				<div if={ room }>
 					<h1>Room: { room.id }</h1>
+					<div each={ roomUser in roomUsers }>
+						<strong>{ roomUser.name }</strong>: { roomUser.id }
+						<div>
+							<note each={ note, i in roomUser.notes } is-user={ (user.uid === roomUser.id) } room={ room } room-user={ roomUser }></note>
+						</div>
+					</div>
+					<p>
+						...are in the room.
+					</p>
+					<metronome></metronome>
 				</div>
   		</div>
   	</div>
@@ -16,6 +26,7 @@
 		let roomsRef = database.collection('sound-rooms');
 
 		this.room = null;
+		this.roomUsers = [];
 
 		firebase.auth().onAuthStateChanged(userObj => {
 			if (userObj) {
@@ -74,7 +85,14 @@
 
 			}).then(roomUsersRef => {
 				stopListening = roomUsersRef.onSnapshot(querySnapshot => {
-					console.log(querySnapshot.docs);
+					this.roomUsers = [];
+					querySnapshot.forEach(doc => {
+						this.roomUsers.push(doc.data());
+					});
+
+					console.log(this.roomUsers);
+
+					this.update();
 				});
 			});
 		});
