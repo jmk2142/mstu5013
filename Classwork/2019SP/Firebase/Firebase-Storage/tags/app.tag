@@ -5,7 +5,7 @@
 			<div class="col">
 				<!-- LOGGED OUT -->
 				<div if={ !user } ref="loggedOut">
-					<h1>
+					<h1 class="mb-5">
 						You are logged out.
 						<button type="button" onclick={ logIn }>LOGIN</button>
 					</h1>
@@ -13,7 +13,7 @@
 
 				<!-- LOGGED IN -->
 				<div if={ user } ref="loggedIn">
-					<h1>
+					<h1 class="mb-5">
 						You are logged in:
 						<button type="button" onclick={ logOut }>LOGOUT</button>
 					</h1>

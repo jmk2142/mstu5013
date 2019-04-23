@@ -64,7 +64,7 @@
 			let fileRef = mediaStorageRef.child(uniqueName);
 
 			fileRef.put(this.file).then(snapshot => {
-				console.log('UPLOADED');
+				console.log('UPLOADED File');
 				return snapshot.ref.getDownloadURL();
 			}).then(downloadURL => {
 				let key = momentsRef.doc().id;
@@ -97,7 +97,10 @@
 
   <style>
     /* CSS */
-    :scope {}
+    :scope {
+    	display: block;
+			margin-bottom: 3em;
+    }
 		img, video {
 			width: 100%;
 		}
